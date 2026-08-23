@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineNova - Premium Streaming</title>
+    <meta name="description"
+        content="CineNova - Watch the latest movies, series, and anime in high quality. Free and unlimited.">
+    <meta name="keywords" content="streaming, movies, series, anime, cinema, hd, cinenova">
+    <meta name="author" content="RNA GROUPE">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="CineNova">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta property="og:title" content="CineNova - Premium Streaming">
+    <meta property="og:description" content="Watch movies, series and anime for free in high quality.">
+    <meta property="og:image" content="https://cinenova-streamin.netlify.app/og-image.png">
+    <meta name="referrer" content="no-referrer">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo"><i class="fa-solid fa-play-circle"></i> CineNova</div>
+        <div class="loading-bar">
+            <div class="loading-bar-fill"></div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <i class="fa-solid fa-play-circle brand-icon"></i>
+            <span class="brand-name">CineNova</span>
+        </div>
+        <div class="nav-links">
+            <button class="nav-btn active" id="nav-home" data-page="home">Home</button>
+            <button class="nav-btn" id="nav-movies" data-page="movies">Movies</button>
+            <button class="nav-btn" id="nav-series" data-page="series">Series</button>
+            <button class="nav-btn" id="nav-anime" data-page="anime">Anime</button>
+            <button class="nav-btn" id="nav-asian" data-page="asian">Asian</button>
+            <button class="nav-btn" id="nav-reels" data-page="reels"><i class="fa-solid fa-play"></i> Reels</button>
+            <button class="nav-btn" id="nav-list" data-page="mylist"><i class="fa-solid fa-heart"></i> My List</button>
+        </div>
+        <div class="nav-actions">
+            <!-- Language trigger removed -->
+            <button class="icon-btn" id="search-trigger" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="search-input" placeholder="Search for movies, series, or anime (supports Arabic)..."
+                autocomplete="off">
+            <button class="icon-btn" id="close-search" aria-label="Close search"><i
+                    class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="search-filters" id="search-filters">
+            <select id="filter-type" class="filter-select">
+                <option value="multi">All Media</option>
+                <option value="movie">Movies</option>
+                <option value="tv">Series & Anime</option>
+            </select>
+            <select id="filter-genre" class="filter-select">
+                <option value="">All Genres</option>
+                <option value="28">Action</option>
+                <option value="35">Comedy</option>
+                <option value="18">Drama</option>
+                <option value="27">Horror</option>
+                <option value="878">Sci-Fi</option>
+                <option value="16">Animation</option>
+                <option value="53">Thriller</option>
+                <option value="10749">Romance</option>
+            </select>
+            <select id="filter-sort" class="filter-select">
+                <option value="popularity.desc">Most Viewed</option>
+                <option value="vote_average.desc">Top Rated</option>
+                <option value="primary_release_date.desc">Newest</option>
+            </select>
+        </div>
+        <div class="search-results" id="search-results">
+            <p class="search-hint">Type to search through millions of titles...</p>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" id="hero-content">
+            <!-- Populated by JS -->
+        </div>
+        <div class="hero-indicators" id="hero-indicators"></div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+
+        <!-- Continue Watching -->
+        <section class="content-section" id="history-section" style="display:none">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fa-solid fa-clock-rotate-left"></i> Continue Watching</h2>
+                <button class="clear-history-btn" id="clear-history-btn" onclick="clearHistory()">Clear All</button>
+            </div>
+            <div class="slider-wrap">
+                <button class="slider-arrow arrow-left" onclick="slideRow('history-slider', -1)"><i
+                        class="fa-solid fa-chevron-left"></i></button>
+                <div class="slider" id="history-slider"></div>
+                <button class="slider-arrow arrow-right" onclick="slideRow('history-slider', 1)"><i
+                        class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Trending -->
+        <section class="content-section" id="section-trending">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fa-solid fa-fire"></i> Trending This Week</h2>
+            </div>
+            <div class="slider-wrap">
+                <button class="slider-arrow arrow-left" onclick="slideRow('slider-trending', -1)"><i
+                        class="fa-solid fa-chevron-left"></i></button>
+                <div class="slider" id="slider-trending">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+                <button class="slider-arrow arrow-right" onclick="slideRow('slider-trending', 1)"><i
+                        class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- New Releases -->
+        <section class="content-section" id="section-new">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fa-solid fa-star"></i> New Releases</h2>
+            </div>
+            <div class="slider-wrap">
+                <button class="slider-arrow arrow-left" onclick="slideRow('slider-new', -1)"><i
+                        class="fa-solid fa-chevron-left"></i></button>
+                <div class="slider" id="slider-new">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+                <button class="slider-arrow arrow-right" onclick="slideRow('slider-new', 1)"><i
+                        class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Top Rated Movies -->
+        <section class="content-section" id="section-top-movies">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fa-solid fa-trophy"></i> Top Rated Movies</h2>
+            </div>
+            <div class="slider-wrap">
+                <button class="slider-arrow arrow-left" onclick="slideRow('slider-top-movies', -1)"><i
+                        class="fa-solid fa-chevron-left"></i></button>
+                <div class="slider" id="slider-top-movies">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+                <button class="slider-arrow arrow-right" onclick="slideRow('slider-top-movies', 1)"><i
+                        class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Popular Series -->
+        <section class="content-section" id="section-series">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fa-solid fa-tv"></i> Popular Series</h2>
+            </div>
+            <div class="slider-wrap">
+                <button class="slider-arrow arrow-left" onclick="slideRow('slider-series', -1)"><i
+                        class="fa-solid fa-chevron-left"></i></button>
+                <div class="slider" id="slider-series">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+                <button class="slider-arrow arrow-right" onclick="slideRow('slider-series', 1)"><i
+                        class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Anime -->
+        <section class="content-section" id="section-anime">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fa-solid fa-dragon"></i> Anime</h2>
+            </div>
+            <div class="slider-wrap">
+                <button class="slider-arrow arrow-left" onclick="slideRow('slider-anime', -1)"><i
+                        class="fa-solid fa-chevron-left"></i></button>
+                <div class="slider" id="slider-anime">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+                <button class="slider-arrow arrow-right" onclick="slideRow('slider-anime', 1)"><i
+                        class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Asian Cinema (Chinese & Japanese) -->
+        <section class="content-section" id="section-asian">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fa-solid fa-torii-gate"></i> Asian Cinema</h2>
+            </div>
+            <div class="slider-wrap">
+                <button class="slider-arrow arrow-left" onclick="slideRow('slider-asian', -1)"><i
+                        class="fa-solid fa-chevron-left"></i></button>
+                <div class="slider" id="slider-asian">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+                <button class="slider-arrow arrow-right" onclick="slideRow('slider-asian', 1)"><i
+                        class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Action & Adventure -->
+        <section class="content-section" id="section-action">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fa-solid fa-bolt"></i> Action & Adventure</h2>
+            </div>
+            <div class="slider-wrap">
+                <button class="slider-arrow arrow-left" onclick="slideRow('slider-action', -1)"><i
+                        class="fa-solid fa-chevron-left"></i></button>
+                <div class="slider" id="slider-action">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+                <button class="slider-arrow arrow-right" onclick="slideRow('slider-action', 1)"><i
+                        class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Sci-Fi -->
+        <section class="content-section" id="section-scifi">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fa-solid fa-rocket"></i> Sci-Fi</h2>
+            </div>
+            <div class="slider-wrap">
+                <button class="slider-arrow arrow-left" onclick="slideRow('slider-scifi', -1)"><i
+                        class="fa-solid fa-chevron-left"></i></button>
+                <div class="slider" id="slider-scifi">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+                <button class="slider-arrow arrow-right" onclick="slideRow('slider-scifi', 1)"><i
+                        class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Reels Section (outside main so showHomePage doesn't destroy it) -->
+    <section class="content-section" id="section-reels" style="display:none; padding: 0;">
+        <div id="reels-container" class="reels-container">
+            <div style="text-align: center; margin-top: 100px; color: var(--text3);"><i
+                    class="fa-solid fa-spinner fa-spin fa-2x"></i></div>
+        </div>
+    </section>
+
+    <!-- Detail Modal -->
+    <div class="modal-overlay" id="detail-modal">
+        <div class="modal-card">
+            <button class="modal-close" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-backdrop-wrap">
+                <img class="modal-backdrop-img" id="modal-backdrop" src="" alt="">
+                <div class="modal-backdrop-gradient"></div>
+                <div class="modal-backdrop-info">
+                    <h2 class="modal-title" id="modal-title"></h2>
+                    <div class="modal-meta" id="modal-meta"></div>
+                    <div class="modal-actions">
+                        <button class="btn-play" id="modal-play-btn"><i class="fa-solid fa-play"></i> Watch
+                            Now</button>
+                        <button class="btn-watchparty" id="modal-party-btn"
+                            style="display:none; background: var(--secondary); color:#fff;"><i
+                                class="fa-solid fa-users"></i> Watch Party</button>
+                        <button class="btn-list" id="modal-list-btn" onclick="toggleHistory()"><i
+                                class="fa-solid fa-plus"></i> My List</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p class="modal-desc" id="modal-desc"></p>
+                <div class="modal-servers" id="modal-servers">
+                    <button class="btn-secondary" onclick="openServerSelector()"><i class="fa-solid fa-server"></i> Change Source</button>
+                    <span class="current-server-text" id="modal-current-server-text">Current: Oxygen</span>
+                </div>
+                <!-- Cast Section — filled by JS -->
+                <div id="modal-cast-section"></div>
+
+                <!-- Episodes Section — filled by JS for TV shows -->
+                <div id="modal-episodes-section"></div>
+
+                <!-- Similar Parts Section -->
+                <div id="modal-similar-section"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Server Selection Modal (Premium) -->
+    <div class="server-modal-overlay" id="server-modal">
+        <div class="server-modal-card">
+            <div class="server-modal-header">
+                <div class="sm-header-left">
+                    <div class="sm-icon-bg"><i class="fa-solid fa-cloud"></i></div>
+                    <div>
+                        <h3 class="sm-title">Select Source</h3>
+                        <p class="sm-subtitle">Choose your preferred server</p>
+                    </div>
+                </div>
+                <div class="sm-header-right">
+                    <span class="sm-badge untested-badge">5 Untested</span>
+                    <span class="sm-badge available-badge">3 Available</span>
+                </div>
+                <button class="sm-close" onclick="closeServerSelector()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="server-grid" id="server-grid">
+                <!-- Generated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ── App Download Promo ── -->
+    <section class="app-promo-section" id="app-promo">
+        <div class="app-promo-container">
+            <button class="app-promo-close" onclick="this.closest('.app-promo-section').style.display='none'"
+                aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="app-promo-img">
+                <img src="app-promo.png" alt="CineNova App">
+            </div>
+            <div class="app-promo-content">
+                <h2>CineNova App 📱</h2>
+                <p id="promo-text">Get the app for a faster, ad-free experience on Android & iOS.</p>
+                <div style="display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap;">
+                    <a href="CineNova.apk" download class="btn-primary app-dl-btn"
+                        style="flex:1; text-align:center; font-size:0.9rem;">
+                        <i class="fa-brands fa-android"></i> Android
+                    </a>
+                    <button class="btn-primary app-dl-btn"
+                        style="flex:1; background:var(--surface); border:1px solid var(--border); font-size:0.9rem;"
+                        onclick="alert('For iPhone users: Tap the Share button below, then select \'Add to Home Screen\'');">
+                        <i class="fa-brands fa-apple"></i> iOS
+                    </button>
+                    <a href="CineNova_Setup_2.0.0.exe" download class="btn-primary app-dl-btn"
+                        style="flex:1; background:#0078d7; text-align:center; font-size:0.9rem; min-width: 100px;">
+                        <i class="fa-brands fa-windows"></i> Windows
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-discord-box">
+                <ul class="nav-links">
+                    <li class="active" data-tab="trending">Trending</li>
+                    <li data-tab="movies">Movies</li>
+                    <li data-tab="tv">TV Shows</li>
+                    <li id="nav-join-party"
+                        style="display:none; color: var(--accent); font-weight: bold; cursor: pointer;">
+                        <i class="fa-solid fa-tower-broadcast"></i> Join Party
+                    </li>
+                </ul>
+                <h4>Join our Discord community</h4>
+                <p>Having issues or want to request a movie/series? We're here to help.</p>
+                <div style="display: flex; gap: 10px; margin-top: 10px; align-items: center;">
+                    <a href="CineNova.apk" download class="btn-primary">Download Phone App</a>
+                    <a href="CineNova_Setup_2.0.0.exe" download class="btn-primary"
+                        style="background: #0078d7;">Download for PC</a>
+                </div>
+            </div>
+            <a href="https://discord.gg/22nKbWj5we" target="_blank" class="discord-btn">Join Server</a>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-brand">
+                <i class="fa-solid fa-play-circle brand-icon"></i> CineNova
+            </div>
+            <p>All rights reserved &copy; 2026. Developed by <a href="https://rna-group.netlify.app" target="_blank"
+                    class="dev-link">RNA</a></p>
+        </div>
+        </div>
+    </footer>
+
+    <!-- Video Player -->
+    <div class="player-overlay" id="player-overlay">
+        <div class="player-header">
+            <span id="player-title"></span>
+
+            <div id="ep-nav" style="display:none; gap:10px; align-items:center; margin: 0 16px;">
+                <button class="nav-ep-btn" id="prev-ep-btn" onclick="playPrevEpisode()"><i
+                        class="fa-solid fa-backward-step"></i> Prev</button>
+                <button class="nav-ep-btn" id="next-ep-btn" onclick="playNextEpisode()">Next <i
+                        class="fa-solid fa-forward-step"></i></button>
+            </div>
+
+            <div class="player-controls-right">
+                <div class="player-servers-wrap">
+                    <button class="player-server-toggle" id="player-server-toggle" onclick="openServerSelector()">
+                        <i class="fa-solid fa-server"></i> Source: <span id="player-current-server-text">Oxygen</span>
+                    </button>
+                </div>
+                <button class="player-close-btn" id="close-player"><i class="fa-solid fa-xmark"></i> Close</button>
+            </div>
+        </div>
+        <div class="player-frame-wrap">
+            <div class="ad-notice" id="ad-notice">
+                <i class="fa-solid fa-shield-halved"></i> <strong>Tip:</strong> For a completely ad-free experience, we
+                recommend using <b>Brave Browser</b> or <b>uBlock Origin</b>.
+                <button onclick="document.getElementById('ad-notice').style.display='none'"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <iframe id="player-frame" src="" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"
+                style="width:100%;height:100%;border:none;display:block;"></iframe>
+
+            <!-- Interactive Prediction Overlay -->
+            <div class="prediction-wrap" id="prediction-wrap">
+                <div class="prediction-title"><i class="fa-solid fa-gamepad"></i> What do you think will happen?</div>
+                <div class="prediction-options" id="prediction-options"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+    <script src="watch-party.js"></script>
+    <script>
+        // Register Service Worker for PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(() => { });
+        }
+    </script>
+</body>
+
+</html>

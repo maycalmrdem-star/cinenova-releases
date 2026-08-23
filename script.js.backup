@@ -1,0 +1,1780 @@
+// Premium Movie Database with FULL MOVIES via VidSrc Embed
+const movies = [
+    // Action Movies with Sequels
+    {
+        id: 1,
+        title: "The Dark Knight",
+        description: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests.",
+        poster: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/nMKdUUepR0i5zn0y1T4CsSB5chy.jpg",
+        tmdbId: 155,
+        categories: ["Action", "Crime", "Trending"],
+        year: 2008,
+        duration: "2h 32m",
+        rating: "97% Match",
+        type: "Movie",
+        parts: [
+            { title: "Batman Begins", year: 2005, poster: "https://image.tmdb.org/t/p/w200/1P3ZyEq02wcTMd3iE4ebtLvncvH.jpg", tmdbId: 272 },
+            { title: "The Dark Knight", year: 2008, poster: "https://image.tmdb.org/t/p/w200/qJ2tW6WMUDux911r6m7haRef0WH.jpg", tmdbId: 155, current: true },
+            { title: "The Dark Knight Rises", year: 2012, poster: "https://image.tmdb.org/t/p/w200/hr0L2aueqlP2BYUblTTjmtn0hw4.jpg", tmdbId: 49026 }
+        ]
+    },
+    {
+        id: 2,
+        title: "Inception",
+        description: "A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+        poster: "https://image.tmdb.org/t/p/w500/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg",
+        tmdbId: 27205,
+        categories: ["Sci-Fi", "Action", "Trending"],
+        year: 2010,
+        duration: "2h 28m",
+        rating: "96% Match",
+        type: "Movie"
+    },
+    {
+        id: 3,
+        title: "Interstellar",
+        description: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+        poster: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK5VQsXEG.jpg",
+        tmdbId: 157336,
+        categories: ["Sci-Fi", "Drama", "Trending"],
+        year: 2014,
+        duration: "2h 49m",
+        rating: "98% Match",
+        type: "Movie"
+    },
+    {
+        id: 4,
+        title: "The Matrix",
+        description: "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+        poster: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/fNG7i7RqMErkcqhohV2a6cV1Ehy.jpg",
+        tmdbId: 603,
+        categories: ["Sci-Fi", "Action", "Classic"],
+        year: 1999,
+        duration: "2h 16m",
+        rating: "95% Match",
+        type: "Movie",
+        parts: [
+            { title: "The Matrix", year: 1999, poster: "https://image.tmdb.org/t/p/w200/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg", tmdbId: 603, current: true },
+            { title: "The Matrix Reloaded", year: 2003, poster: "https://image.tmdb.org/t/p/w200/9TGHDvWrqKBzwDxDodHYXEmOE6J.jpg", tmdbId: 604 },
+            { title: "The Matrix Revolutions", year: 2003, poster: "https://image.tmdb.org/t/p/w200/fgm8OZ7o4G1G1I1R1LqySXOclRj.jpg", tmdbId: 605 },
+            { title: "The Matrix Resurrections", year: 2021, poster: "https://image.tmdb.org/t/p/w200/8c4a8kE7PizaGQQnditMmI1xbRp.jpg", tmdbId: 624860 }
+        ]
+    },
+    {
+        id: 5,
+        title: "Avengers: Endgame",
+        description: "After the devastating events of Infinity War, the Avengers assemble once more to reverse Thanos' actions.",
+        poster: "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
+        tmdbId: 299534,
+        categories: ["Action", "Superhero", "Trending"],
+        year: 2019,
+        duration: "3h 1m",
+        rating: "94% Match",
+        type: "Movie",
+        parts: [
+            { title: "The Avengers", year: 2012, poster: "https://image.tmdb.org/t/p/w200/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg", tmdbId: 24428 },
+            { title: "Avengers: Age of Ultron", year: 2015, poster: "https://image.tmdb.org/t/p/w200/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg", tmdbId: 99861 },
+            { title: "Avengers: Infinity War", year: 2018, poster: "https://image.tmdb.org/t/p/w200/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg", tmdbId: 299536 },
+            { title: "Avengers: Endgame", year: 2019, poster: "https://image.tmdb.org/t/p/w200/or06FN3Dka5tukK1e9sl16pB3iy.jpg", tmdbId: 299534, current: true }
+        ]
+    },
+    {
+        id: 6,
+        title: "John Wick: Chapter 4",
+        description: "John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy.",
+        poster: "https://image.tmdb.org/t/p/w500/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/7I6VUdPj6tQECNHdviJkUHD2u89.jpg",
+        tmdbId: 603692,
+        categories: ["Action", "Thriller", "New"],
+        year: 2023,
+        duration: "2h 49m",
+        rating: "95% Match",
+        type: "Movie",
+        parts: [
+            { title: "John Wick", year: 2014, poster: "https://image.tmdb.org/t/p/w200/fZPSd91yGE9fCcCe6OoQr6E3Bev.jpg", tmdbId: 245891 },
+            { title: "John Wick: Chapter 2", year: 2017, poster: "https://image.tmdb.org/t/p/w200/hXWBc0ioZh3cN4zCu6SN3YHXZVO.jpg", tmdbId: 324552 },
+            { title: "John Wick: Chapter 3", year: 2019, poster: "https://image.tmdb.org/t/p/w200/ziEuG1essDuWuC5lpWUaw1uXY2O.jpg", tmdbId: 458156 },
+            { title: "John Wick: Chapter 4", year: 2023, poster: "https://image.tmdb.org/t/p/w200/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg", tmdbId: 603692, current: true }
+        ]
+    },
+    { id: 7, title: "The Shawshank Redemption", description: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.", poster: "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", backdrop: "https://image.tmdb.org/t/p/original/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg", tmdbId: 278, categories: ["Drama", "Classic", "Trending"], year: 1994, duration: "2h 22m", rating: "99% Match", type: "Movie" },
+    { id: 8, title: "Fight Club", description: "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.", poster: "https://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg", backdrop: "https://image.tmdb.org/t/p/original/hZkgoQYus5vegHoetLkCJzb17zJ.jpg", tmdbId: 550, categories: ["Drama", "Thriller", "Cult"], year: 1999, duration: "2h 19m", rating: "95% Match", type: "Movie" },
+    { id: 9, title: "Parasite", description: "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.", poster: "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg", backdrop: "https://image.tmdb.org/t/p/original/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg", tmdbId: 496243, categories: ["Thriller", "Drama", "New"], year: 2019, duration: "2h 12m", rating: "98% Match", type: "Movie" },
+    { id: 10, title: "Oppenheimer", description: "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.", poster: "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg", backdrop: "https://image.tmdb.org/t/p/original/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg", tmdbId: 872585, categories: ["Drama", "History", "New"], year: 2023, duration: "3h", rating: "96% Match", type: "Movie" },
+
+    // Animation
+    {
+        id: 11, title: "Spider-Man: Into the Spider-Verse", description: "Teen Miles Morales becomes the Spider-Man of his universe and must join with five spider-powered individuals.", poster: "https://image.tmdb.org/t/p/w500/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg", backdrop: "https://image.tmdb.org/t/p/original/7d6EY00g1c39SGZOoCJ5Py9nNth.jpg", tmdbId: 324857, categories: ["Animation", "Action", "Trending"], year: 2018, duration: "1h 57m", rating: "97% Match", type: "Movie",
+        parts: [
+            { title: "Spider-Man: Into the Spider-Verse", year: 2018, poster: "https://image.tmdb.org/t/p/w200/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg", tmdbId: 324857, current: true },
+            { title: "Spider-Man: Across the Spider-Verse", year: 2023, poster: "https://image.tmdb.org/t/p/w200/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg", tmdbId: 569094 }
+        ]
+    },
+    { id: 12, title: "Your Name", description: "Two strangers find themselves linked in a bizarre way. When a connection forms, will distance be the only thing to keep them apart?", poster: "https://image.tmdb.org/t/p/w500/q719jXXEzOoYaps6babgKnONONX.jpg", backdrop: "https://image.tmdb.org/t/p/original/dIWwZW7dJJtqC6CgWzYkNVKIUm8.jpg", tmdbId: 372058, categories: ["Animation", "Romance", "Trending"], year: 2016, duration: "1h 46m", rating: "98% Match", type: "Movie" },
+    { id: 13, title: "Coco", description: "Aspiring musician Miguel enters the Land of the Dead to find his great-great-grandfather, a legendary singer.", poster: "https://image.tmdb.org/t/p/w500/gGEsBPAijhVUFoiNpgZXqRVWJt2.jpg", backdrop: "https://image.tmdb.org/t/p/original/askg3SMvhqEl4OL52YuvdtY40Yb.jpg", tmdbId: 354912, categories: ["Animation", "Family", "New"], year: 2017, duration: "1h 45m", rating: "96% Match", type: "Movie" },
+
+    // Sci-Fi
+    {
+        id: 14, title: "Dune", description: "Paul Atreides must travel to the most dangerous planet in the universe to ensure the future of his family and his people.", poster: "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg", backdrop: "https://image.tmdb.org/t/p/original/jYEW5xZkZk2WTrdbMGAPFuBqbDc.jpg", tmdbId: 438631, categories: ["Sci-Fi", "Adventure", "New"], year: 2021, duration: "2h 35m", rating: "95% Match", type: "Movie",
+        parts: [
+            { title: "Dune: Part One", year: 2021, poster: "https://image.tmdb.org/t/p/w200/d5NXSklXo0qyIYkgV94XAgMIckC.jpg", tmdbId: 438631, current: true },
+            { title: "Dune: Part Two", year: 2024, poster: "https://image.tmdb.org/t/p/w200/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg", tmdbId: 693134 }
+        ]
+    },
+    {
+        id: 15, title: "Avatar: The Way of Water", description: "Jake Sully lives with his newfound family on Pandora. When a familiar threat returns, Jake must work with Neytiri.", poster: "https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg", backdrop: "https://image.tmdb.org/t/p/original/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg", tmdbId: 76600, categories: ["Sci-Fi", "Adventure", "New"], year: 2022, duration: "3h 12m", rating: "92% Match", type: "Movie",
+        parts: [
+            { title: "Avatar", year: 2009, poster: "https://image.tmdb.org/t/p/w200/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg", tmdbId: 19995 },
+            { title: "Avatar: The Way of Water", year: 2022, poster: "https://image.tmdb.org/t/p/w200/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg", tmdbId: 76600, current: true }
+        ]
+    },
+    { id: 16, title: "Blade Runner 2049", description: "Young Blade Runner K's discovery of a long-buried secret leads him to track down former Blade Runner Rick Deckard.", poster: "https://image.tmdb.org/t/p/w500/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg", backdrop: "https://image.tmdb.org/t/p/original/ilRyazdMJwN05exqhwK4tMKBYZs.jpg", tmdbId: 335984, categories: ["Sci-Fi", "Drama", "New"], year: 2017, duration: "2h 44m", rating: "93% Match", type: "Movie" },
+
+    // TV Series with Episodes
+    {
+        id: 17,
+        title: "Stranger Things",
+        description: "When a young boy disappears, his mother and friends must confront terrifying supernatural forces in Hawkins, Indiana.",
+        poster: "https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/56v2KjBlU4XaOv9rVYEQypROD7P.jpg",
+        tmdbId: 66732,
+        categories: ["Sci-Fi", "Horror", "Trending"],
+        year: 2016,
+        duration: "4 Seasons",
+        rating: "97% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 8, year: 2016 },
+            { number: 2, title: "Season 2", episodes: 9, year: 2017 },
+            { number: 3, title: "Season 3", episodes: 8, year: 2019 },
+            { number: 4, title: "Season 4", episodes: 9, year: 2022 }
+        ]
+    },
+    {
+        id: 18,
+        title: "Breaking Bad",
+        description: "A high school chemistry teacher diagnosed with lung cancer turns to manufacturing and selling methamphetamine.",
+        poster: "https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg",
+        tmdbId: 1396,
+        categories: ["Drama", "Crime", "Classic"],
+        year: 2008,
+        duration: "5 Seasons",
+        rating: "99% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 7, year: 2008 },
+            { number: 2, title: "Season 2", episodes: 13, year: 2009 },
+            { number: 3, title: "Season 3", episodes: 13, year: 2010 },
+            { number: 4, title: "Season 4", episodes: 13, year: 2011 },
+            { number: 5, title: "Season 5", episodes: 16, year: 2012 }
+        ]
+    },
+    {
+        id: 19,
+        title: "Game of Thrones",
+        description: "Nine noble families fight for control over Westeros, while an ancient enemy returns after being dormant.",
+        poster: "https://image.tmdb.org/t/p/w500/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/suopoADq0k8YZr4dQXcU6pToj6s.jpg",
+        tmdbId: 1399,
+        categories: ["Fantasy", "Drama", "Classic"],
+        year: 2011,
+        duration: "8 Seasons",
+        rating: "96% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 10, year: 2011 },
+            { number: 2, title: "Season 2", episodes: 10, year: 2012 },
+            { number: 3, title: "Season 3", episodes: 10, year: 2013 },
+            { number: 4, title: "Season 4", episodes: 10, year: 2014 },
+            { number: 5, title: "Season 5", episodes: 10, year: 2015 },
+            { number: 6, title: "Season 6", episodes: 10, year: 2016 },
+            { number: 7, title: "Season 7", episodes: 7, year: 2017 },
+            { number: 8, title: "Season 8", episodes: 6, year: 2019 }
+        ]
+    },
+    {
+        id: 20,
+        title: "Squid Game",
+        description: "Hundreds of cash-strapped players accept a strange invitation to compete in children's games for a tempting prize.",
+        poster: "https://image.tmdb.org/t/p/w500/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/qw3J9cNeLioOLoR68WX7z79aCdK.jpg",
+        tmdbId: 93405,
+        categories: ["Thriller", "Drama", "Trending"],
+        year: 2021,
+        duration: "2 Seasons",
+        rating: "98% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 9, year: 2021 },
+            { number: 2, title: "Season 2", episodes: 7, year: 2024 }
+        ]
+    },
+    {
+        id: 21,
+        title: "Wednesday",
+        description: "Wednesday Addams is sent to Nevermore Academy, where she attempts to master her psychic ability and solve a murder mystery.",
+        poster: "https://image.tmdb.org/t/p/w500/9PFonBhy4cQy7Jz20NpMygczOkv.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/iHSwvRVsRyxpX7FE7GbviaDvgGZ.jpg",
+        tmdbId: 119051,
+        categories: ["Comedy", "Mystery", "New"],
+        year: 2022,
+        duration: "1 Season",
+        rating: "94% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 8, year: 2022 }
+        ]
+    },
+    {
+        id: 22,
+        title: "The Last of Us",
+        description: "Joel and Ellie must endure brutal circumstances on a trek across post-pandemic America.",
+        poster: "https://image.tmdb.org/t/p/w500/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/uDgy6hyPd82kOHh6I95FLtLnj6p.jpg",
+        tmdbId: 100088,
+        categories: ["Drama", "Action", "New"],
+        year: 2023,
+        duration: "2 Seasons",
+        rating: "97% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 9, year: 2023 },
+            { number: 2, title: "Season 2", episodes: 7, year: 2025 }
+        ]
+    },
+    {
+        id: 23,
+        title: "Money Heist",
+        description: "An unusual group of robbers attempt to carry out the most perfect robbery in Spanish history.",
+        poster: "https://image.tmdb.org/t/p/w500/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/gFZriCkpJYsApPZEF3jhxL4yLzG.jpg",
+        tmdbId: 71446,
+        categories: ["Crime", "Thriller", "Trending"],
+        year: 2017,
+        duration: "5 Parts",
+        rating: "95% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Part 1", episodes: 13, year: 2017 },
+            { number: 2, title: "Part 2", episodes: 9, year: 2017 },
+            { number: 3, title: "Part 3", episodes: 8, year: 2019 },
+            { number: 4, title: "Part 4", episodes: 8, year: 2020 },
+            { number: 5, title: "Part 5", episodes: 10, year: 2021 }
+        ]
+    },
+    {
+        id: 24,
+        title: "The Witcher",
+        description: "Geralt of Rivia, a solitary monster hunter, struggles to find his place in a world where people often prove more wicked than beasts.",
+        poster: "https://image.tmdb.org/t/p/w500/7vjaCdMw15FEbXyLQTVa04URsPm.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg",
+        tmdbId: 71912,
+        categories: ["Fantasy", "Action", "Trending"],
+        year: 2019,
+        duration: "3 Seasons",
+        rating: "93% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 8, year: 2019 },
+            { number: 2, title: "Season 2", episodes: 8, year: 2021 },
+            { number: 3, title: "Season 3", episodes: 8, year: 2023 }
+        ]
+    },
+
+    // More Movies
+    {
+        id: 25, title: "Top Gun: Maverick", description: "After thirty years, Maverick is still pushing the envelope as a top naval aviator.", poster: "https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg", backdrop: "https://image.tmdb.org/t/p/original/AaV1YIdWKnjAIAOe8UUKBFm327v.jpg", tmdbId: 361743, categories: ["Action", "Drama", "New"], year: 2022, duration: "2h 11m", rating: "97% Match", type: "Movie",
+        parts: [
+            { title: "Top Gun", year: 1986, poster: "https://image.tmdb.org/t/p/w200/xUuHj3CgmZQ9P2cMaqQs4J0d4Zc.jpg", tmdbId: 744 },
+            { title: "Top Gun: Maverick", year: 2022, poster: "https://image.tmdb.org/t/p/w200/62HCnUTziyWcpDaBO2i1DX17ljH.jpg", tmdbId: 361743, current: true }
+        ]
+    },
+    { id: 26, title: "Everything Everywhere All at Once", description: "An aging Chinese immigrant is swept up in an insane adventure exploring other universes.", poster: "https://image.tmdb.org/t/p/w500/w3LxiVYdWWRvEVdn5RYq6jIqkb1.jpg", backdrop: "https://image.tmdb.org/t/p/original/fq3DSw74fAodrbLiSv0BW1Ya4Ae.jpg", tmdbId: 545611, categories: ["Action", "Comedy", "New"], year: 2022, duration: "2h 19m", rating: "98% Match", type: "Movie" },
+    { id: 27, title: "The Batman", description: "When a sadistic serial killer begins murdering key political figures in Gotham, Batman investigates.", poster: "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg", backdrop: "https://image.tmdb.org/t/p/original/5P8SmMzSNYikXpxil6BYzJ16611.jpg", tmdbId: 414906, categories: ["Action", "Crime", "New"], year: 2022, duration: "2h 56m", rating: "93% Match", type: "Movie" },
+    { id: 28, title: "Barbie", description: "Barbie and Ken are having the time of their lives in the colorful world of Barbie Land.", poster: "https://image.tmdb.org/t/p/w500/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg", backdrop: "https://image.tmdb.org/t/p/original/nHf61UzkfFno5X1ofIhugCPus2R.jpg", tmdbId: 346698, categories: ["Comedy", "Fantasy", "New"], year: 2023, duration: "1h 54m", rating: "92% Match", type: "Movie" },
+    {
+        id: 29, title: "Guardians of the Galaxy Vol. 3", description: "Peter Quill rallies his team to defend the universe and protect one of their own.", poster: "https://image.tmdb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg", backdrop: "https://image.tmdb.org/t/p/original/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg", tmdbId: 447365, categories: ["Action", "Superhero", "New"], year: 2023, duration: "2h 30m", rating: "95% Match", type: "Movie",
+        parts: [
+            { title: "Guardians of the Galaxy", year: 2014, poster: "https://image.tmdb.org/t/p/w200/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg", tmdbId: 118340 },
+            { title: "Guardians of the Galaxy Vol. 2", year: 2017, poster: "https://image.tmdb.org/t/p/w200/y4MBh0EjBlMuOzv9axM4qJlmhzz.jpg", tmdbId: 283995 },
+            { title: "Guardians of the Galaxy Vol. 3", year: 2023, poster: "https://image.tmdb.org/t/p/w200/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg", tmdbId: 447365, current: true }
+        ]
+    },
+    {
+        id: 30, title: "Knives Out", description: "A detective investigates the death of a patriarch of an eccentric, combative family.", poster: "https://image.tmdb.org/t/p/w500/pThyQovXQrw2m0s9x82twj48Jq4.jpg", backdrop: "https://image.tmdb.org/t/p/original/4HWAQu28e2yaWrtupFPGFkdNU7V.jpg", tmdbId: 546554, categories: ["Comedy", "Mystery", "New"], year: 2019, duration: "2h 10m", rating: "95% Match", type: "Movie",
+        parts: [
+            { title: "Knives Out", year: 2019, poster: "https://image.tmdb.org/t/p/w200/pThyQovXQrw2m0s9x82twj48Jq4.jpg", tmdbId: 546554, current: true },
+            { title: "Glass Onion", year: 2022, poster: "https://image.tmdb.org/t/p/w200/vDGr1YdrlfbU9wxTOdpf3zChmv9.jpg", tmdbId: 661374 }
+        ]
+    },
+
+    // More Popular Series
+    {
+        id: 31,
+        title: "Dexter",
+        description: "A Miami forensics expert moonlights as a serial killer of criminals whom he believes have escaped justice.",
+        poster: "https://image.tmdb.org/t/p/w500/9eOcd6BmPlPlJYVeLe1v4BzcLlv.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/m95QOF2yQmSYHXMGmJ7UsFW7jIz.jpg",
+        tmdbId: 1405,
+        categories: ["Crime", "Drama", "Trending"],
+        year: 2006,
+        duration: "8 Seasons",
+        rating: "96% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 12, year: 2006 },
+            { number: 2, title: "Season 2", episodes: 12, year: 2007 },
+            { number: 3, title: "Season 3", episodes: 12, year: 2008 },
+            { number: 4, title: "Season 4", episodes: 12, year: 2009 },
+            { number: 5, title: "Season 5", episodes: 12, year: 2010 },
+            { number: 6, title: "Season 6", episodes: 12, year: 2011 },
+            { number: 7, title: "Season 7", episodes: 12, year: 2012 },
+            { number: 8, title: "Season 8", episodes: 12, year: 2013 }
+        ]
+    },
+    {
+        id: 32,
+        title: "Peaky Blinders",
+        description: "A gangster family epic set in 1900s England, centering on a gang who sew razor blades in the peaks of their caps.",
+        poster: "https://image.tmdb.org/t/p/w500/vUUqzWa2LnHIVqkaKVlVGkVcZIW.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/wiE9doxiLwq3WCGamDIOb2PqBqc.jpg",
+        tmdbId: 60574,
+        categories: ["Crime", "Drama", "Trending"],
+        year: 2013,
+        duration: "6 Seasons",
+        rating: "95% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 6, year: 2013 },
+            { number: 2, title: "Season 2", episodes: 6, year: 2014 },
+            { number: 3, title: "Season 3", episodes: 6, year: 2016 },
+            { number: 4, title: "Season 4", episodes: 6, year: 2017 },
+            { number: 5, title: "Season 5", episodes: 6, year: 2019 },
+            { number: 6, title: "Season 6", episodes: 6, year: 2022 }
+        ]
+    },
+    {
+        id: 33,
+        title: "The Crown",
+        description: "Follows the political rivalries and romance of Queen Elizabeth II's reign and the events that shaped the 20th century.",
+        poster: "https://image.tmdb.org/t/p/w500/1M876KPjulVwppEpldhdc8V4o68.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/wHOf5jT4zSDCWpNVZ46e1L0vCrz.jpg",
+        tmdbId: 1399,
+        categories: ["Drama", "History", "New"],
+        year: 2016,
+        duration: "6 Seasons",
+        rating: "94% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 10, year: 2016 },
+            { number: 2, title: "Season 2", episodes: 10, year: 2017 },
+            { number: 3, title: "Season 3", episodes: 10, year: 2019 },
+            { number: 4, title: "Season 4", episodes: 10, year: 2020 },
+            { number: 5, title: "Season 5", episodes: 10, year: 2022 },
+            { number: 6, title: "Season 6", episodes: 10, year: 2023 }
+        ]
+    },
+
+    // Anime Series
+    {
+        id: 34,
+        title: "Attack on Titan",
+        description: "After his hometown is destroyed and mother is killed, Eren Jaeger vows to cleanse the earth of the giant humanoid Titans.",
+        poster: "https://image.tmdb.org/t/p/w500/hTP1DtLGFamjfu8WqjnuQdP1n4i.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/8SOMCcKdxfYgcrpL0NYg7dq9FjD.jpg",
+        tmdbId: 1429,
+        categories: ["Animation", "Action", "Trending"],
+        year: 2013,
+        duration: "4 Seasons",
+        rating: "99% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 25, year: 2013 },
+            { number: 2, title: "Season 2", episodes: 12, year: 2017 },
+            { number: 3, title: "Season 3", episodes: 22, year: 2018 },
+            { number: 4, title: "Final Season", episodes: 28, year: 2021 }
+        ]
+    },
+    {
+        id: 35,
+        title: "Death Note",
+        description: "An intelligent high school student goes on a secret crusade to eliminate criminals after discovering a supernatural notebook.",
+        poster: "https://image.tmdb.org/t/p/w500/wwFQBddvfNJGT5lXVlE8cqHsG0V.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/qGZhR1aNJvLdFoMLyZk3lXQZxD3.jpg",
+        tmdbId: 13916,
+        categories: ["Animation", "Thriller", "Classic"],
+        year: 2006,
+        duration: "1 Season",
+        rating: "98% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 37, year: 2006 }
+        ]
+    },
+    {
+        id: 36,
+        title: "Naruto",
+        description: "Naruto Uzumaki, a young ninja who seeks recognition and dreams of becoming the Hokage, the leader of his village.",
+        poster: "https://image.tmdb.org/t/p/w500/jBKG48PDFF5lyPW3Fz83wjEkXML.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/dKaIXDR7CJw9JT5XKAdnCHj01zR.jpg",
+        tmdbId: 31910,
+        categories: ["Animation", "Action", "Classic"],
+        year: 2002,
+        duration: "9 Seasons",
+        rating: "96% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 25, year: 2002 },
+            { number: 2, title: "Season 2", episodes: 26, year: 2003 },
+            { number: 3, title: "Season 3", episodes: 26, year: 2004 },
+            { number: 4, title: "Season 4", episodes: 26, year: 2005 },
+            { number: 5, title: "Season 5", episodes: 26, year: 2006 },
+            { number: 6, title: "Shippuden S1", episodes: 32, year: 2007 },
+            { number: 7, title: "Shippuden S2", episodes: 32, year: 2008 },
+            { number: 8, title: "Shippuden S3", episodes: 32, year: 2009 },
+            { number: 9, title: "Shippuden S4", episodes: 40, year: 2010 }
+        ]
+    },
+    {
+        id: 37,
+        title: "One Piece",
+        description: "Follows the adventures of Monkey D. Luffy and his pirate crew in order to find the greatest treasure ever left by the legendary Pirate, Gold Roger.",
+        poster: "https://image.tmdb.org/t/p/w500/cMD9Ygz11zjJzAovURpO75Qg7rT.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/2PwNJly6AWgE1L97qQPu9A6JQyw.jpg",
+        tmdbId: 37854,
+        categories: ["Animation", "Adventure", "Trending"],
+        year: 1999,
+        duration: "21 Seasons",
+        rating: "97% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "East Blue Saga", episodes: 61, year: 1999 },
+            { number: 2, title: "Alabasta Saga", episodes: 77, year: 2001 },
+            { number: 3, title: "Sky Island Saga", episodes: 52, year: 2003 },
+            { number: 4, title: "Water 7 Saga", episodes: 118, year: 2005 }
+        ]
+    },
+    {
+        id: 38,
+        title: "Demon Slayer",
+        description: "A family is attacked by demons and only two members survive - Tanjiro and his sister Nezuko, who is turning into a demon slowly.",
+        poster: "https://image.tmdb.org/t/p/w500/xUfRZu2mi8jH6SzQEJGP6tjBuYj.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/nTvM4mhqNlHIvUkI1gVnW6XP7GG.jpg",
+        tmdbId: 85937,
+        categories: ["Animation", "Action", "New"],
+        year: 2019,
+        duration: "4 Seasons",
+        rating: "98% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Unwavering Resolve Arc", episodes: 26, year: 2019 },
+            { number: 2, title: "Entertainment District Arc", episodes: 11, year: 2021 },
+            { number: 3, title: "Swordsmith Village Arc", episodes: 11, year: 2023 },
+            { number: 4, title: "Hashira Training Arc", episodes: 8, year: 2024 }
+        ]
+    },
+    {
+        id: 39,
+        title: "My Hero Academia",
+        description: "A superhero-admiring boy without any powers enrolls in a prestigious hero academy and learns what it really means to be a hero.",
+        poster: "https://image.tmdb.org/t/p/w500/fZXlMGhAJGRe1wHhL3lfuP8fQfb.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/8x5H8yPiNpGNE5KLSITDDCVDXWE.jpg",
+        tmdbId: 65930,
+        categories: ["Animation", "Action", "Trending"],
+        year: 2016,
+        duration: "7 Seasons",
+        rating: "96% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 13, year: 2016 },
+            { number: 2, title: "Season 2", episodes: 25, year: 2017 },
+            { number: 3, title: "Season 3", episodes: 25, year: 2018 },
+            { number: 4, title: "Season 4", episodes: 25, year: 2019 },
+            { number: 5, title: "Season 5", episodes: 25, year: 2021 },
+            { number: 6, title: "Season 6", episodes: 25, year: 2022 },
+            { number: 7, title: "Season 7", episodes: 21, year: 2024 }
+        ]
+    },
+
+    // Children's & Family Movies
+    {
+        id: 40,
+        title: "Frozen",
+        description: "When the newly crowned Queen Elsa accidentally uses her power to turn things into ice, her sister Anna teams up with a mountain man.",
+        poster: "https://image.tmdb.org/t/p/w500/kgwjIb1TkYk8sK7rCrxaInFnY.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/pTWdcZN5K1YdTOjdSDBPAWVCATt.jpg",
+        tmdbId: 109445,
+        categories: ["Animation", "Family", "Classic"],
+        year: 2013,
+        duration: "1h 42m",
+        rating: "95% Match",
+        type: "Movie",
+        parts: [
+            { title: "Frozen", year: 2013, poster: "https://image.tmdb.org/t/p/w200/kgwjIb1TkYk8sK7rCrxaInFnY.jpg", tmdbId: 109445, current: true },
+            { title: "Frozen II", year: 2019, poster: "https://image.tmdb.org/t/p/w200/qQJz4v9eJk09kKV1G3xNZQ4xmrN.jpg", tmdbId: 330457 }
+        ]
+    },
+    {
+        id: 41,
+        title: "The Lion King",
+        description: "A lion prince is cast out of his pride by his cruel uncle, who claims he killed his father.",
+        poster: "https://image.tmdb.org/t/p/w500/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/1TUg5pO1VZ4B0Q1amk3OThBlNwA.jpg",
+        tmdbId: 8587,
+        categories: ["Animation", "Family", "Classic"],
+        year: 1994,
+        duration: "1h 28m",
+        rating: "98% Match",
+        type: "Movie"
+    },
+    {
+        id: 42,
+        title: "Toy Story",
+        description: "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room.",
+        poster: "https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/pKKvCaL1TPTVtbI6EeliyND3api.jpg",
+        tmdbId: 862,
+        categories: ["Animation", "Family", "Classic"],
+        year: 1995,
+        duration: "1h 21m",
+        rating: "97% Match",
+        type: "Movie",
+        parts: [
+            { title: "Toy Story", year: 1995, poster: "https://image.tmdb.org/t/p/w200/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg", tmdbId: 862, current: true },
+            { title: "Toy Story 2", year: 1999, poster: "https://image.tmdb.org/t/p/w200/2MFIhZAW0CVlEQrFyqwa4U6V9cz.jpg", tmdbId: 863 },
+            { title: "Toy Story 3", year: 2010, poster: "https://image.tmdb.org/t/p/w200/AbbXspvLN5Id9S41jLmkHB3VzFf.jpg", tmdbId: 10193 },
+            { title: "Toy Story 4", year: 2019, poster: "https://image.tmdb.org/t/p/w200/w9kR8qbmQ01HwnvK4alvnQ2ca0L.jpg", tmdbId: 301528 }
+        ]
+    },
+    {
+        id: 43,
+        title: "Finding Nemo",
+        description: "After his son is captured in the Great Barrier Reef, a timid clownfish sets out on a journey to bring him home.",
+        poster: "https://image.tmdb.org/t/p/w500/eHuGQ10FUzK1mdOY69wF5pGgEf5.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/4bZWsBfKqoTcmGEqoKyJmWI0RqU.jpg",
+        tmdbId: 12,
+        categories: ["Animation", "Family", "Classic"],
+        year: 2003,
+        duration: "1h 40m",
+        rating: "96% Match",
+        type: "Movie",
+        parts: [
+            { title: "Finding Nemo", year: 2003, poster: "https://image.tmdb.org/t/p/w200/eHuGQ10FUzK1mdOY69wF5pGgEf5.jpg", tmdbId: 12, current: true },
+            { title: "Finding Dory", year: 2016, poster: "https://image.tmdb.org/t/p/w200/yFjVlsJmEMacU0BNUwdGZlo2ixq.jpg", tmdbId: 127380 }
+        ]
+    },
+    {
+        id: 44,
+        title: "Moana",
+        description: "An adventurous teenager sails out on a daring mission to save her people.",
+        poster: "https://image.tmdb.org/t/p/w500/4JeejGugONWpJkbnvL12hVoYEDa.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/zTO2yrALLv1oTwLpvTFYZdNRBVD.jpg",
+        tmdbId: 277834,
+        categories: ["Animation", "Family", "New"],
+        year: 2016,
+        duration: "1h 47m",
+        rating: "95% Match",
+        type: "Movie"
+    },
+    // Venom Collection
+    {
+        id: 46,
+        title: "Venom: The Last Dance",
+        description: "Eddie and Venom are on the run. Hunted by both of their worlds and with the net closing in, the duo are forced into a devastating decision.",
+        poster: "https://image.tmdb.org/t/p/w500/aosmBsbcyBkuXY1YSzgsC9m61OK.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/3V4P2ovpkZv3UansQUrotpU9spu.jpg",
+        tmdbId: 912649,
+        categories: ["Action", "Sci-Fi", "New"],
+        year: 2024,
+        duration: "1h 49m",
+        rating: "94% Match",
+        type: "Movie",
+        parts: [
+            { title: "Venom", year: 2018, poster: "https://image.tmdb.org/t/p/w200/2uNW4WwBuzB0P46NVIuVvL0iI02.jpg", tmdbId: 335983 },
+            { title: "Venom: Let There Be Carnage", year: 2021, poster: "https://image.tmdb.org/t/p/w200/rjkmogjXv45vUvY6mWPZDPdxTPW.jpg", tmdbId: 580489 },
+            { title: "Venom: The Last Dance", year: 2024, poster: "https://image.tmdb.org/t/p/w200/aosmBsbcyBkuXY1YSzgsC9m61OK.jpg", tmdbId: 912649, current: true }
+        ]
+    },
+    {
+        id: 47,
+        title: "Venom",
+        description: "Investigative journalist Eddie Brock attempts a comeback following a scandal, but accidentally becomes the host of an alien symbiote.",
+        poster: "https://image.tmdb.org/t/p/w500/2uNW4WwBuzB0P46NVIuVvL0iI02.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/VuukPm9LogVYvSVRpCq9hLE9KW.jpg",
+        tmdbId: 335983,
+        categories: ["Action", "Sci-Fi", "Classic"],
+        year: 2018,
+        duration: "1h 52m",
+        rating: "95% Match",
+        type: "Movie"
+    },
+
+    // Cloverfield Collection
+    {
+        id: 48,
+        title: "10 Cloverfield Lane",
+        description: "After a car accident, a young woman is held in a shelter by two men, who claim the outside world is affected by a widespread chemical attack.",
+        poster: "https://image.tmdb.org/t/p/w500/84D98Y6z9YpY69oK9YpY69oK9Yp.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/pA9vS5179HwVvBWhxXk6r8DqfO.jpg",
+        tmdbId: 333339,
+        categories: ["Thriller", "Sci-Fi", "Classic"],
+        year: 2016,
+        duration: "1h 43m",
+        rating: "93% Match",
+        type: "Movie",
+        parts: [
+            { title: "Cloverfield", year: 2008, poster: "https://image.tmdb.org/t/p/w200/499v25H77VlsU4vYp6wY6p1X.jpg", tmdbId: 7151 },
+            { title: "10 Cloverfield Lane", year: 2016, poster: "https://image.tmdb.org/t/p/w200/84D98Y6z9YpY69oK9YpY69oK9Yp.jpg", tmdbId: 333339, current: true },
+            { title: "The Cloverfield Paradox", year: 2018, poster: "https://image.tmdb.org/t/p/w200/6iRTM6YvSCSW0W6fM6sK6S8S6.jpg", tmdbId: 340666 }
+        ]
+    },
+    {
+        id: 49,
+        title: "Cloverfield",
+        description: "Five young New Yorkers throw their friend a going-away party the night that a monster the size of a skyscraper descends upon the city.",
+        poster: "https://image.tmdb.org/t/p/w500/499v25H77VlsU4vYp6wY6p1X.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg",
+        tmdbId: 7151,
+        categories: ["Action", "Sci-Fi", "Classic"],
+        year: 2008,
+        duration: "1h 25m",
+        rating: "90% Match",
+        type: "Movie"
+    },
+
+    // 2024 Blockbusters
+    {
+        id: 50,
+        title: "Deadpool & Wolverine",
+        description: "A weary Wolverine finds himself joining forces with a loudmouthed Deadpool to defeat a common enemy.",
+        poster: "https://image.tmdb.org/t/p/w500/8cdWcslYdWn19NinHpMGbpNeDHi.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/dvBCdCohwWbsP5qAaglOXagDMtk.jpg",
+        tmdbId: 533535,
+        categories: ["Action", "Comedy", "New", "Trending"],
+        year: 2024,
+        duration: "2h 7m",
+        rating: "97% Match",
+        type: "Movie",
+        parts: [
+            { title: "Deadpool", year: 2016, poster: "https://image.tmdb.org/t/p/w200/fSRb7vyIP8rQpL0I47P3qUsEKX3.jpg", tmdbId: 293660 },
+            { title: "Deadpool 2", year: 2018, poster: "https://image.tmdb.org/t/p/w200/to0spRl1CMDvyUbOnbb4fTk3VAd.jpg", tmdbId: 383498 },
+            { title: "Deadpool & Wolverine", year: 2024, poster: "https://image.tmdb.org/t/p/w200/8cdWcslYdWn19NinHpMGbpNeDHi.jpg", tmdbId: 533535, current: true }
+        ]
+    },
+    {
+        id: 51,
+        title: "Joker: Folie à Deux",
+        description: "Failed comedian Arthur Fleck meets the love of his life, Harley Quinn, while incarcerated at Arkham State Hospital.",
+        poster: "https://image.tmdb.org/t/p/w500/if8QiqCI7WAGImKcJCfzp6VTyKA.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/bO48Yq5jdfgCovT8IM46pGLSFVt.jpg",
+        tmdbId: 889737,
+        categories: ["Drama", "Thriller", "New"],
+        year: 2024,
+        duration: "2h 18m",
+        rating: "91% Match",
+        type: "Movie",
+        parts: [
+            { title: "Joker", year: 2019, poster: "https://image.tmdb.org/t/p/w200/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg", tmdbId: 475557 },
+            { title: "Joker: Folie à Deux", year: 2024, poster: "https://image.tmdb.org/t/p/w200/if8QiqCI7WAGImKcJCfzp6VTyKA.jpg", tmdbId: 889737, current: true }
+        ]
+    },
+
+    // Kids & Animation Expansion
+    {
+        id: 52,
+        title: "Inside Out 2",
+        description: "Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions!",
+        poster: "https://image.tmdb.org/t/p/w500/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/stKGOm8UyhuLPR9sZLjs5AkmncA.jpg",
+        tmdbId: 1022789,
+        categories: ["Animation", "Family", "New", "Trending"],
+        year: 2024,
+        duration: "1h 36m",
+        rating: "98% Match",
+        type: "Movie",
+        parts: [
+            { title: "Inside Out", year: 2015, poster: "https://image.tmdb.org/t/p/w200/2H1TmgdfNtsKlU9jKdeNyYL5y8T.jpg", tmdbId: 150540 },
+            { title: "Inside Out 2", year: 2024, poster: "https://image.tmdb.org/t/p/w200/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg", tmdbId: 1022789, current: true }
+        ]
+    },
+    {
+        id: 53,
+        title: "Kung Fu Panda 4",
+        description: "After Po is tapped to become the Spiritual Leader of the Valley of Peace, he needs to find and train a new Dragon Warrior.",
+        poster: "https://image.tmdb.org/t/p/w500/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/kYgQzzjNis5jJalYtIHgrom0gOx.jpg",
+        tmdbId: 1011985,
+        categories: ["Animation", "Family", "New"],
+        year: 2024,
+        duration: "1h 34m",
+        rating: "95% Match",
+        type: "Movie",
+        parts: [
+            { title: "Kung Fu Panda", year: 2008, poster: "https://image.tmdb.org/t/p/w200/wWtSBPU7HUJuCbKTOxGrWTIlg4C.jpg", tmdbId: 9502 },
+            { title: "Kung Fu Panda 2", year: 2011, poster: "https://image.tmdb.org/t/p/w200/mtqqD00vB4PGRt20gWtGqFhrkjN.jpg", tmdbId: 49444 },
+            { title: "Kung Fu Panda 3", year: 2016, poster: "https://image.tmdb.org/t/p/w200/nlr2oxoL5sCIEYKxZpAAvz2Erh6.jpg", tmdbId: 140300 },
+            { title: "Kung Fu Panda 4", year: 2024, poster: "https://image.tmdb.org/t/p/w200/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg", tmdbId: 1011985, current: true }
+        ]
+    },
+
+    // Masterpiece Series expansion
+    {
+        id: 54,
+        title: "Shogun",
+        description: "In Japan in the year 1600, Lord Yoshii Toranaga is fighting for his life as his enemies on the Council of Regents unite against him.",
+        poster: "https://image.tmdb.org/t/p/w500/7O4iVfOMQmdCSxhOg1WnzG1AgYT.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/bwSmgmd90hCWwqOKQYTEraeOZhJ.jpg",
+        tmdbId: 122226,
+        categories: ["Drama", "History", "New", "Trending"],
+        year: 2024,
+        duration: "1 Season",
+        rating: "99% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 10, year: 2024 }
+        ]
+    },
+    {
+        id: 55,
+        title: "Fallout",
+        description: "In a future, post-apocalyptic Los Angeles caused by nuclear decimation, citizens must live in underground bunkers to protect themselves from radiation.",
+        poster: "https://image.tmdb.org/t/p/w500/c15BtJxCXMrISLVmysdsnZUPQft.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/coaPCIqQBPUZsOnJcWZxhaORcDT.jpg",
+        tmdbId: 122226,
+        categories: ["Sci-Fi", "Action", "New", "Trending"],
+        year: 2024,
+        duration: "1 Season",
+        rating: "97% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 8, year: 2024 }
+        ]
+    },
+
+    // Anime Masterpieces
+    {
+        id: 56,
+        title: "Blue Eye Samurai",
+        description: "A master of swords who lives a life in disguise while seeking revenge in Edo-period Japan.",
+        poster: "https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/suopoADq0k8YZr4dQXcU6pToj6s.jpg",
+        tmdbId: 131927,
+        categories: ["Animation", "Action", "Trending"],
+        year: 2023,
+        duration: "1 Season",
+        rating: "99% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 8, year: 2023 }
+        ]
+    },
+    {
+        id: 57,
+        title: "Jujutsu Kaisen",
+        description: "A boy swallows a cursed talisman - the finger of a demon - and becomes cursed himself. He enters a shaman's school to be able to locate the demon's other body parts.",
+        poster: "https://image.tmdb.org/t/p/w500/2uNW4WwBuzB0P46NVIuVvL0iI02.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/VuukPm9LogVYvSVRpCq9hLE9KW.jpg",
+        tmdbId: 95479,
+        categories: ["Animation", "Action", "Trending"],
+        year: 2020,
+        duration: "2 Seasons",
+        rating: "98% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 24, year: 2020 },
+            { number: 2, title: "Season 2", episodes: 23, year: 2023 }
+        ]
+    },
+    // More Classics & Blockbusters
+    {
+        id: 58,
+        title: "Gladiator II",
+        description: "Years after witnessing the death of the revered hero Maximus at the hands of his uncle, Lucius is forced to enter the Colosseum.",
+        poster: "https://image.tmdb.org/t/p/w500/2cxhvwyEwRlysAmRH4iodkvo0z5.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/euYIwmwkmz95mnXvufEmbL6ovhZ.jpg",
+        tmdbId: 940551,
+        categories: ["Action", "Drama", "New"],
+        year: 2024,
+        duration: "2h 28m",
+        rating: "94% Match",
+        type: "Movie",
+        parts: [
+            { title: "Gladiator", year: 2000, poster: "https://image.tmdb.org/t/p/w200/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg", tmdbId: 98 },
+            { title: "Gladiator II", year: 2024, poster: "https://image.tmdb.org/t/p/w200/2cxhvwyEwRlysAmRH4iodkvo0z5.jpg", tmdbId: 940551, current: true }
+        ]
+    },
+    {
+        id: 59,
+        title: "Dune: Part Two",
+        description: "Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family.",
+        poster: "https://image.tmdb.org/t/p/w500/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/zviBTio77R8p90969S7p778S7.jpg",
+        tmdbId: 693134,
+        categories: ["Sci-Fi", "Adventure", "Trending", "New"],
+        year: 2024,
+        duration: "2h 46m",
+        rating: "98% Match",
+        type: "Movie"
+    },
+    {
+        id: 60,
+        title: "The Boys",
+        description: "A group of vigilantes set out to take down corrupt superheroes who abuse their superpowers.",
+        poster: "https://image.tmdb.org/t/p/w500/2zmTngn1tYC1AvfnrFLhxeD82hz.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/7cqKGQMnNabzOpi7qaIgZvQ7NGV.jpg",
+        tmdbId: 76479,
+        categories: ["Action", "Sci-Fi", "Trending"],
+        year: 2019,
+        duration: "4 Seasons",
+        rating: "96% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 8, year: 2019 },
+            { number: 2, title: "Season 2", episodes: 8, year: 2020 },
+            { number: 3, title: "Season 3", episodes: 8, year: 2022 },
+            { number: 4, title: "Season 4", episodes: 8, year: 2024 }
+        ]
+    },
+    {
+        id: 61,
+        title: "Harry Potter and the Philosopher's Stone",
+        description: "An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible evil that haunts the magical world.",
+        poster: "https://image.tmdb.org/t/p/w500/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/hziiv14OpD73u9gAak4XDDfBKa2.jpg",
+        tmdbId: 671,
+        categories: ["Fantasy", "Adventure", "Classic"],
+        year: 2001,
+        duration: "2h 32m",
+        rating: "95% Match",
+        type: "Movie",
+        parts: [
+            { title: "Stone", year: 2001, poster: "https://image.tmdb.org/t/p/w200/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg", tmdbId: 671, current: true },
+            { title: "Chamber", year: 2002, poster: "https://image.tmdb.org/t/p/w200/sdEOH0992YZ0QSxgXNICD3nLvB.jpg", tmdbId: 672 },
+            { title: "Prisoner", year: 2004, poster: "https://image.tmdb.org/t/p/w200/aWxwnYoe8p2d2fcxOqtvAtJ72Rw.jpg", tmdbId: 673 },
+            { title: "Goblet", year: 2005, poster: "https://image.tmdb.org/t/p/w200/fECBtHlr0RB3foNHDiCBXeg9Bv9.jpg", tmdbId: 674 },
+            { title: "Phoenix", year: 2007, poster: "https://image.tmdb.org/t/p/w200/5aOyriWkPec0zUDxmHFP9qMy4lL.jpg", tmdbId: 675 },
+            { title: "Prince", year: 2009, poster: "https://image.tmdb.org/t/p/w200/oFKoNLOWf1fUIHbDokdPBxIj0.jpg", tmdbId: 767 },
+            { title: "Hallows 1", year: 2010, poster: "https://image.tmdb.org/t/p/w200/maP4MTfPCeVD2FZpKyBP5H1JxnN.jpg", tmdbId: 12444 },
+            { title: "Hallows 2", year: 2011, poster: "https://image.tmdb.org/t/p/w200/c54HpQmuwXjHq2C9wmoACjxoomT.jpg", tmdbId: 12445 }
+        ]
+    },
+
+    // Anime Hits
+    {
+        id: 62,
+        title: "Solo Leveling",
+        description: "In a world where hunters, humans who possess magical abilities, must battle deadly monsters to protect the human race from certain annihilation.",
+        poster: "https://image.tmdb.org/t/p/w500/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/4jBIM5ypmRKsviubhcLaVH1Au8F.jpg",
+        tmdbId: 154712,
+        categories: ["Animation", "Action", "New", "Trending"],
+        year: 2024,
+        duration: "1 Season",
+        rating: "97% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 12, year: 2024 }
+        ]
+    },
+    {
+        id: 63,
+        title: "Fullmetal Alchemist: Brotherhood",
+        description: "Two brothers search for a Philosopher's Stone after an attempt to revive their deceased mother goes awry and leaves them in damaged physical forms.",
+        poster: "https://image.tmdb.org/t/p/w500/5ZFUEOULaVml7pQuXxhpR2SmVUw.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/p29z7ky0EnLupF7bZxAoHhDPI9.jpg",
+        tmdbId: 31845,
+        categories: ["Animation", "Action", "Adventure", "Classic"],
+        year: 2009,
+        duration: "1 Season",
+        rating: "99% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Series", episodes: 64, year: 2009 }
+        ]
+    },
+
+    // Kids/Family
+    {
+        id: 64,
+        title: "Despicable Me 4",
+        description: "Gru and Lucy and their girls welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad.",
+        poster: "https://image.tmdb.org/t/p/w500/wWba3TaojhK7NdycRhoQpsG0FaH.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/lgkPzcOSnTvjeMnuFzozRO5HHw1.jpg",
+        tmdbId: 1022796,
+        categories: ["Animation", "Family", "New"],
+        year: 2024,
+        duration: "1h 35m",
+        rating: "93% Match",
+        type: "Movie",
+        parts: [
+            { title: "DM 1", year: 2010, poster: "https://image.tmdb.org/t/p/w200/9lOloREsAhBu0pEtU0BgeR1rHyo.jpg", tmdbId: 20352 },
+            { title: "DM 2", year: 2013, poster: "https://image.tmdb.org/t/p/w200/5Fh4NdoEnCx3lAtWFdPNLwo6qN3.jpg", tmdbId: 93456 },
+            { title: "DM 3", year: 2017, poster: "https://image.tmdb.org/t/p/w200/5qcUGqWoWhEsoQwNUrtf3y3fcWn.jpg", tmdbId: 324852 },
+            { title: "DM 4", year: 2024, poster: "https://image.tmdb.org/t/p/w200/wWba3TaojhK7NdycRhoQpsG0FaH.jpg", tmdbId: 1022796, current: true }
+        ]
+    },
+    {
+        id: 65,
+        title: "The Super Mario Bros. Movie",
+        description: "The story of The Super Mario Bros. on their journey through the Mushroom Kingdom.",
+        poster: "https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg",
+        tmdbId: 502356,
+        categories: ["Animation", "Family", "Adventure"],
+        year: 2023,
+        duration: "1h 32m",
+        rating: "95% Match",
+        type: "Movie"
+    },
+    // Legendary Masterpieces
+    {
+        id: 66,
+        title: "The Lord of the Rings: The Fellowship of the Ring",
+        description: "Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its creator.",
+        poster: "https://image.tmdb.org/t/p/w500/6oom5QYvAess6oH6LZv9o906uRz.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/v7D7S7UDznI0vECm2pbnClqORIC.jpg",
+        tmdbId: 120,
+        categories: ["Fantasy", "Adventure", "Classic"],
+        year: 2001,
+        duration: "2h 58m",
+        rating: "98% Match",
+        type: "Movie",
+        parts: [
+            { title: "Fellowship", year: 2001, tmdbId: 120, current: true },
+            { title: "Two Towers", year: 2002, tmdbId: 121 },
+            { title: "Return King", year: 2003, tmdbId: 122 }
+        ]
+    },
+    { id: 67, title: "The Godfather", description: "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.", poster: "https://image.tmdb.org/t/p/w500/3bhkrjOiERoSTq9L9vPvhST1YPn.jpg", backdrop: "https://image.tmdb.org/t/p/original/tmU7GeKVZeqSdhqvbLq9uqqOqiH.jpg", tmdbId: 238, categories: ["Drama", "Crime", "Classic"], year: 1972, duration: "2h 55m", rating: "99% Match", type: "Movie" },
+    { id: 68, title: "Pulp Fiction", description: "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.", poster: "https://image.tmdb.org/t/p/w500/d5iIlSXY9CptS0Q5mUMbiB9uC4a.jpg", backdrop: "https://image.tmdb.org/t/p/original/su6jt9c9S9EPZM6S3H2uT9uUv9L.jpg", tmdbId: 680, categories: ["Drama", "Crime", "Classic"], year: 1994, duration: "2h 34m", rating: "97% Match", type: "Movie" },
+    { id: 69, title: "Forrest Gump", description: "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man.", poster: "https://image.tmdb.org/t/p/w500/arw2vcBveWOVWm63YvSjStandard.jpg", backdrop: "https://image.tmdb.org/t/p/original/qdIsS9S9S9S9S9S9S9S9S9S9S.jpg", tmdbId: 13, categories: ["Drama", "Comedy", "Classic"], year: 1994, duration: "2h 22m", rating: "98% Match", type: "Movie" },
+
+    // Top Series
+    {
+        id: 70,
+        title: "The Bear",
+        description: "A young chef from the fine dining world returns to Chicago to run his family's sandwich shop.",
+        poster: "https://image.tmdb.org/t/p/w500/sHFlbKS3WLqMnp9t2ghADIJFnuQ.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/xAqQD0AtkYlYc1T4ocewUvshPP7.jpg",
+        tmdbId: 136311,
+        categories: ["Drama", "Comedy", "Trending", "New"],
+        year: 2022,
+        duration: "3 Seasons",
+        rating: "97% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 8, year: 2022 },
+            { number: 2, title: "Season 2", episodes: 10, year: 2023 },
+            { number: 3, title: "Season 3", episodes: 10, year: 2024 }
+        ]
+    },
+    {
+        id: 71,
+        title: "House of the Dragon",
+        description: "The story of the Targaryen civil war that took place about 200 years before events portrayed in Game of Thrones.",
+        poster: "https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/suopoADq0k8YZr4dQXcU6pToj6s.jpg",
+        tmdbId: 94997,
+        categories: ["Fantasy", "Drama", "Trending"],
+        year: 2022,
+        duration: "2 Seasons",
+        rating: "96% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 10, year: 2022 },
+            { number: 2, title: "Season 2", episodes: 8, year: 2024 }
+        ]
+    },
+    {
+        id: 72,
+        title: "Better Call Saul",
+        description: "The trials and tribulations of criminal lawyer Jimmy McGill in the years leading up to his fateful run-in with Walter White and Jesse Pinkman.",
+        poster: "https://image.tmdb.org/t/p/w500/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/hPZeZPft6PQKE2akz7tqMg8XJqB.jpg",
+        tmdbId: 60625,
+        categories: ["Crime", "Drama", "Classic"],
+        year: 2015,
+        duration: "6 Seasons",
+        rating: "98% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 10, year: 2015 },
+            { number: 2, title: "Season 2", episodes: 10, year: 2016 },
+            { number: 3, title: "Season 3", episodes: 10, year: 2017 },
+            { number: 4, title: "Season 4", episodes: 10, year: 2018 },
+            { number: 5, title: "Season 5", episodes: 10, year: 2020 },
+            { number: 6, title: "Season 6", episodes: 13, year: 2022 }
+        ]
+    },
+
+    // More Kids & Family
+    { id: 73, title: "Shrek", description: "An ogre, in order to regain his swamp, travels along with an annoying donkey in order to bring a princess to a scheming lord.", poster: "https://image.tmdb.org/t/p/w500/iB64vpL3dIObOtMZgX3RqdVdQDc.jpg", backdrop: "https://image.tmdb.org/t/p/original/sRvXNDItGlWCqtO3j6wks52FmbD.jpg", tmdbId: 808, categories: ["Animation", "Family", "Comedy", "Classic"], year: 2001, duration: "1h 30m", rating: "95% Match", type: "Movie" },
+    { id: 74, title: "Cars", description: "A hot-shot race-car named Lightning McQueen gets waylaid in Radiator Springs, where he finds the true meaning of friendship and family.", poster: "https://image.tmdb.org/t/p/w500/okIz1HyxeVOMzYwwHUjH2pHi74I.jpg", backdrop: "https://image.tmdb.org/t/p/original/a1MlbLBk5Sy6YvMbSuKfwGlDVlb.jpg", tmdbId: 920, categories: ["Animation", "Family", "Classic"], year: 2006, duration: "1h 57m", rating: "94% Match", type: "Movie" },
+    { id: 75, title: "Monsters, Inc.", description: "In order to power the city, monsters have to scare children so that they scream.", poster: "https://image.tmdb.org/t/p/w500/sgheSKxZkttIe8ONsf2sKu62YKf.jpg", backdrop: "https://image.tmdb.org/t/p/original/xvh1LxXrOIr4PQ7VQjVP9Z2yN5N.jpg", tmdbId: 585, categories: ["Animation", "Family", "Classic"], year: 2001, duration: "1h 32m", rating: "97% Match", type: "Movie" },
+
+    // More Anime
+    { id: 76, title: "Spirited Away", description: "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.", poster: "https://image.tmdb.org/t/p/w500/3bhkrjOiERoSTq9L9vPvhST1YPn.jpg", backdrop: "https://image.tmdb.org/t/p/original/tmU7GeKVZeqSdhqvbLq9uqqOqiH.jpg", tmdbId: 129, categories: ["Animation", "Fantasy", "Classic"], year: 2001, duration: "2h 5m", rating: "99% Match", type: "Movie" },
+    {
+        id: 77,
+        title: "Dragon Ball Z",
+        description: "The adventures of Gohan, Goku and the Z-Warriors as they defend the Earth against various villains.",
+        poster: "https://image.tmdb.org/t/p/w500/6VKOfL6ihwTiB5Vibq6QTfzhxQ6.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/fj21HwUprqwjwRSfPco7rMqf9K5.jpg",
+        tmdbId: 12971,
+        categories: ["Animation", "Action", "Classic"],
+        year: 1989,
+        duration: "9 Seasons",
+        rating: "97% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Saiyan Saga", episodes: 35, year: 1989 }
+        ]
+    },
+    {
+        id: 78,
+        title: "One Punch Man",
+        description: "The story of Saitama, a hero who can defeat any monster with a single punch but has become bored by his lack of challenge.",
+        poster: "https://image.tmdb.org/t/p/w500/iE3s0lG5QVdEHOBs8S84XfLKEhf.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/keLVVx7naNzyR8IfX1nOnYPH0vB.jpg",
+        tmdbId: 63926,
+        categories: ["Animation", "Action", "Comedy"],
+        year: 2015,
+        duration: "2 Seasons",
+        rating: "97% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 12, year: 2015 },
+            { number: 2, title: "Season 2", episodes: 12, year: 2019 }
+        ]
+    },
+    {
+        id: 79,
+        title: "The Walking Dead",
+        description: "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+        poster: "https://image.tmdb.org/t/p/w500/xf9wuDcqlUPWABZNeDKPbZUjWx0.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/wXXaPMgrv96NkH8uD4sAf2KOcBg.jpg",
+        tmdbId: 1402,
+        categories: ["Horror", "Drama", "Trending"],
+        year: 2010,
+        duration: "11 Seasons",
+        rating: "95% Match",
+        type: "Series",
+        seasons: [
+            { number: 1, title: "Season 1", episodes: 6, year: 2010 },
+            { number: 2, title: "Season 2", episodes: 13, year: 2011 },
+            { number: 3, title: "Season 3", episodes: 16, year: 2012 },
+            { number: 4, title: "Season 4", episodes: 16, year: 2013 },
+            { number: 5, title: "Season 5", episodes: 16, year: 2014 },
+            { number: 6, title: "Season 6", episodes: 16, year: 2015 },
+            { number: 7, title: "Season 7", episodes: 16, year: 2016 },
+            { number: 8, title: "Season 8", episodes: 16, year: 2017 },
+            { number: 9, title: "Season 9", episodes: 16, year: 2018 },
+            { number: 10, title: "Season 10", episodes: 22, year: 2019 },
+            { number: 11, title: "Season 11", episodes: 24, year: 2021 }
+        ]
+    },
+    {
+        id: 80,
+        title: "Demon Slayer: Kimetsu no Yaiba",
+        description: "A family is attacked by demons and only two members survive - Tanjiro and his sister Nezuko, who is turning into a demon slowly. Tanjiro sets out to become a demon slayer to avenge his family.",
+        poster: "https://image.tmdb.org/t/p/w500/xUfRZu2mi8jH6yRxZUMArWZcaFs.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/tCPcQkX806Vp1E4W4U25o3A4B0n.jpg",
+        tmdbId: 85937,
+        categories: ["Animation", "Action", "Trending"],
+        year: 2019,
+        duration: "4 Seasons",
+        rating: "98% Match",
+        type: "Series"
+    },
+    {
+        id: 81,
+        title: "Jujutsu Kaisen",
+        description: "A boy swallows a cursed talisman - the finger of a demon - and becomes cursed himself. He enters a shaman's school to be able to locate the demon's other body parts and thus exorcise himself.",
+        poster: "https://image.tmdb.org/t/p/w500/hFWP5HkbVEe40hrptjvFcLsQwX.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/As9s3NnONXj4t6gNn4W2yOqHkU7.jpg",
+        tmdbId: 95479,
+        categories: ["Animation", "Action", "Trending"],
+        year: 2020,
+        duration: "2 Seasons",
+        rating: "96% Match",
+        type: "Series"
+    },
+    {
+        id: 82,
+        title: "Naruto Shippūden",
+        description: "Naruto Uzumaki, is a loud, hyperactive, adolescent ninja who constantly searches for approval and recognition, as well as to become Hokage, who is acknowledged as the leader and strongest of all ninja in the village.",
+        poster: "https://image.tmdb.org/t/p/w500/zAYRe2bJxpWTVrwwmBc00VFkAf4.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/xXqF4k0rC1e26yE3i10A5iJ9K8e.jpg",
+        tmdbId: 31911,
+        categories: ["Animation", "Action", "Classic"],
+        year: 2007,
+        duration: "21 Seasons",
+        rating: "99% Match",
+        type: "Series"
+    },
+    {
+        id: 83,
+        title: "Deadpool & Wolverine",
+        description: "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
+        poster: "https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/yDHYTfA3R0jFYba16ZBRWUP1jn0.jpg",
+        tmdbId: 533535,
+        categories: ["Action", "Comedy", "New", "Trending"],
+        year: 2024,
+        duration: "2h 8m",
+        rating: "94% Match",
+        type: "Movie"
+    },
+    {
+        id: 84,
+        title: "The Creator",
+        description: "Amid a future war between the human race and the forces of artificial intelligence, a hardened ex-special forces agent grieving the disappearance of his wife, is recruited to hunt down and kill the Creator.",
+        poster: "https://image.tmdb.org/t/p/w500/vBZ0qvaRxqEhZwl6LWmruBqWE8Z.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/kjQBrc00fB2RjHZB3PGR4w9ibpz.jpg",
+        tmdbId: 670292,
+        categories: ["Sci-Fi", "Action", "New"],
+        year: 2023,
+        duration: "2h 13m",
+        rating: "92% Match",
+        type: "Movie"
+    },
+    {
+        id: 85,
+        title: "Solo Leveling",
+        description: "They say whatever doesn’t kill you makes you stronger, but that’s not the case for the world’s weakest hunter Sung Jinwoo. After being brutally slaughtered by monsters in a high-ranking dungeon, Jinwoo came back with the System, a program only he could see, that’s leveling him up in every way.",
+        poster: "https://image.tmdb.org/t/p/w500/geCRueVbVsZ4ocCiaP5B2zXF3Z.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/mXnJ1Qo94bN0tD4gQo8Y1d9jX0V.jpg",
+        tmdbId: 195726,
+        categories: ["Animation", "Action", "New"],
+        year: 2024,
+        duration: "1 Season",
+    },
+    {
+        id: 86,
+        title: "Ip Man",
+        description: "During the Sino-Japanese War, Ip Man, a martial arts master, is forced to fight for the survival of his family and his people. (Chinese Masterpiece)",
+        poster: "https://image.tmdb.org/t/p/w500/yYqAhELzO1gDqF5x3q6u7LgL67S.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/9vGv1YwQ9TfUuV1F3J0N3rF6K2S.jpg",
+        tmdbId: 14756,
+        categories: ["Action", "Drama", "Classic"],
+        year: 2008,
+        duration: "1h 46m",
+        rating: "95% Match",
+        type: "Movie"
+    },
+    {
+        id: 87,
+        title: "Hero",
+        description: "One man defeated three assassins who sought to murder the most powerful warlord in pre-unified China. (Chinese Epic)",
+        poster: "https://image.tmdb.org/t/p/w500/2L3HCVZ3mQkK46V5y7k9xX7xM6z.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/yR2L8x9aJ5vR3H2q5b2x7d7m5g.jpg",
+        tmdbId: 79,
+        categories: ["Action", "Drama", "Classic"],
+        year: 2002,
+        duration: "1h 39m",
+        rating: "93% Match",
+        type: "Movie"
+    },
+    {
+        id: 88,
+        title: "Kung Fu Hustle",
+        description: "In Shanghai, China in the 1940s, a wannabe gangster aspires to join the notorious Axe Gang while residents of a housing complex exhibit extraordinary powers in defending their turf. (Chinese Comedy)",
+        poster: "https://image.tmdb.org/t/p/w500/xXqF4k0rC1e26yE3i10A5iJ9K8e.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/mXnJ1Qo94bN0tD4gQo8Y1d9jX0V.jpg",
+        tmdbId: 9470,
+        categories: ["Action", "Comedy", "Classic"],
+        year: 2004,
+        duration: "1h 39m",
+        rating: "94% Match",
+        type: "Movie"
+    },
+    {
+        id: 89,
+        title: "Spirited Away",
+        description: "A young girl, Chihiro, becomes trapped in a strange new world of spirits. When her parents undergo a mysterious transformation, she must call upon the courage she never knew she had to free her family. (Japanese Anime)",
+        poster: "https://image.tmdb.org/t/p/w500/39wmItIWsg5sZMyRU84vP4x8Q2B.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/Ab8mkHcgY5EUWjc74W0Q6Q24Yq.jpg",
+        tmdbId: 129,
+        categories: ["Animation", "Fantasy", "Classic"],
+        year: 2001,
+        duration: "2h 5m",
+        rating: "99% Match",
+        type: "Movie"
+    },
+    {
+        id: 90,
+        title: "Your Name.",
+        description: "Two teenagers share a profound, magical connection upon discovering they are swapping bodies. (Japanese Masterpiece)",
+        poster: "https://image.tmdb.org/t/p/w500/q719jXXEzOoYaps6babgKnONONX.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/7y20XUjXN6n51F7F4Q7lG7S7u9c.jpg",
+        tmdbId: 372058,
+        categories: ["Animation", "Romance", "Drama"],
+        year: 2016,
+        duration: "1h 46m",
+        rating: "98% Match",
+        type: "Movie"
+    },
+    {
+        id: 91,
+        title: "Godzilla Minus One",
+        description: "Post-war Japan is at its lowest point when a new crisis emerges in the form of a giant monster, baptized in the horrific power of the atomic bomb. (Japanese Action)",
+        poster: "https://image.tmdb.org/t/p/w500/hkxxMIGaiCTmrEArK7J56JTKGWb.jpg",
+        backdrop: "https://image.tmdb.org/t/p/original/a0sYIq1t8aA622c1XnU7gWc4W3X.jpg",
+        tmdbId: 1045237,
+        categories: ["Action", "Sci-Fi", "New"],
+        year: 2023,
+        duration: "2h 5m",
+        rating: "97% Match",
+        type: "Movie"
+    }
+];
+
+// DOM Elements
+const navbar = document.getElementById('navbar');
+const heroSection = document.getElementById('hero');
+const navHome = document.getElementById('nav-home');
+const navSeries = document.getElementById('nav-series');
+const navMovies = document.getElementById('nav-movies');
+const navNew = document.getElementById('nav-new');
+const navList = document.getElementById('nav-list');
+const navItems = [navHome, navSeries, navMovies, navNew, navList];
+
+const detailModal = document.getElementById('detail-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalDesc = document.getElementById('modal-description');
+const modalBackdrop = document.getElementById('modal-backdrop-img');
+const modalRating = document.getElementById('modal-rating');
+const modalYear = document.getElementById('modal-year');
+const modalDuration = document.getElementById('modal-duration');
+const modalPlayBtn = document.getElementById('modal-play-btn');
+const closeDetailModal = document.getElementById('close-detail-modal');
+const relatedGrid = document.getElementById('related-grid');
+
+const videoOverlay = document.getElementById('video-overlay');
+const videoContainer = document.getElementById('video-container');
+const closeVideoBtn = document.getElementById('close-video');
+
+const searchTrigger = document.getElementById('search-trigger');
+const searchOverlay = document.getElementById('search-overlay');
+const searchInputFull = document.getElementById('search-input-full');
+const closeSearch = document.getElementById('close-search');
+const searchGridFull = document.getElementById('search-grid-full');
+
+// Initialization
+document.addEventListener('DOMContentLoaded', () => {
+    initializeApp();
+    setupNavigation();
+    setupSliderScroll();
+    setupSearch();
+    startHeroCarousel();
+
+    // Dismiss loading screen
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        setTimeout(() => {
+            loadingScreen.classList.add('hidden');
+            setTimeout(() => loadingScreen.remove(), 600);
+        }, 800);
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+});
+
+function initializeApp(filterValues = null) {
+    if (filterValues) {
+        if (filterValues.type) {
+            currentMovies = movies.filter(m => m.type === filterValues.type);
+        } else if (filterValues.category) {
+            currentMovies = movies.filter(m => m.categories.includes(filterValues.category));
+        } else {
+            currentMovies = [...movies];
+        }
+    } else {
+        currentMovies = [...movies];
+    }
+
+    renderHero(currentMovies[0]);
+
+    const trending = movies.filter(m => m.categories.includes('Trending')).slice(0, 15);
+    renderRow(trending, 'trending-slider');
+
+    const newReleases = movies.filter(m => m.categories.includes('New')).slice(0, 15);
+    renderRow(newReleases, 'new-slider');
+
+    const scifi = movies.filter(m => m.categories.includes('Sci-Fi') || m.categories.includes('Fantasy')).slice(0, 15);
+    renderRow(scifi, 'scifi-slider');
+
+    // Bottom Categorical Rows
+    const moviesOnly = movies.filter(m => m.type === 'Movie').slice(0, 15);
+    renderRow(moviesOnly, 'movies-row-slider');
+
+    const seriesOnly = movies.filter(m => m.type === 'Series').slice(0, 15);
+    renderRow(seriesOnly, 'series-row-slider');
+
+    const animeOnly = movies.filter(m => m.categories.includes('Animation')).slice(0, 15);
+    renderRow(animeOnly, 'anime-row-slider');
+
+    const kidsOnly = movies.filter(m => m.categories.includes('Family')).slice(0, 15);
+    renderRow(kidsOnly, 'kids-row-slider');
+}
+
+// Hero Carousel
+let heroInterval;
+let heroIndex = 0;
+
+function startHeroCarousel() {
+    if (heroInterval) clearInterval(heroInterval);
+    const heroMovies = movies.filter(m => m.categories.includes('Trending')).slice(0, 6);
+
+    heroInterval = setInterval(() => {
+        heroIndex = (heroIndex + 1) % heroMovies.length;
+        renderHero(heroMovies[heroIndex]);
+    }, 5000);
+}
+
+// Search
+function setupSearch() {
+    if (!searchTrigger) return;
+
+    searchTrigger.addEventListener('click', () => {
+        searchOverlay.classList.add('active');
+        searchInputFull.focus();
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeSearch.addEventListener('click', () => {
+        searchOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        searchInputFull.value = '';
+        searchGridFull.innerHTML = '';
+    });
+
+    searchInputFull.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+
+        if (query.length > 0) {
+            const results = movies.filter(m =>
+                m.title.toLowerCase().includes(query) ||
+                m.categories.some(c => c.toLowerCase().includes(query))
+            );
+            renderSearchResults(results);
+        } else {
+            searchGridFull.innerHTML = '';
+        }
+    });
+}
+
+function renderSearchResults(results) {
+    searchGridFull.innerHTML = '';
+    if (results.length === 0) {
+        searchGridFull.innerHTML = '<p style="color:#666; font-size: 1.5rem; text-align:center; width:100%;">No results found</p>';
+        return;
+    }
+
+    results.forEach(movie => {
+        const card = document.createElement('div');
+        card.className = 'grid-card';
+        card.onclick = () => {
+            searchOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            openModal(movie);
+        };
+        card.innerHTML = `<img src="${movie.poster}" loading="lazy" onerror="this.src='https://placehold.co/500x750/111/eee?text=${encodeURIComponent(movie.title)}'">`;
+        searchGridFull.appendChild(card);
+    });
+}
+
+// Render Hero
+function renderHero(movie) {
+    if (!movie) return;
+
+    heroSection.style.backgroundImage = `url('${movie.backdrop}')`;
+    heroSection.innerHTML = `
+                <div class="hero-content">
+                    <h1 class="hero-title">${movie.title}</h1>
+                    <p class="hero-desc">${movie.description}</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="playMovie(${movie.tmdbId}, ${movie.type === 'Series'})">
+                            <i class="fa-solid fa-play"></i> Watch Now
+                        </button>
+                        <button class="btn btn-secondary" onclick="openModalById(${movie.id})">
+                            <i class="fa-solid fa-circle-info"></i> More Info
+                        </button>
+                    </div>
+                </div>
+            `;
+}
+
+// Render Row
+function renderRow(movieList, elementId) {
+    const slider = document.getElementById(elementId);
+    if (!slider) return;
+    slider.innerHTML = '';
+
+    if (movieList.length === 0) {
+        slider.innerHTML = '<p style="padding:1rem;color:#888;">No content</p>';
+        return;
+    }
+
+    movieList.forEach(movie => {
+        const card = document.createElement('div');
+        card.className = 'movie-card';
+        card.onclick = () => openModal(movie);
+        card.innerHTML = `<img src="${movie.poster}" alt="${movie.title}" loading="lazy" onerror="this.src='https://placehold.co/500x750/111/eee?text=${encodeURIComponent(movie.title)}'">`;
+        slider.appendChild(card);
+    });
+}
+
+// Navigation
+function setupNavigation() {
+    navItems.forEach(item => {
+        if (!item) return;
+        item.addEventListener('click', () => {
+            navItems.forEach(n => n && n.classList.remove('active'));
+            item.classList.add('active');
+
+            if (item.id === 'nav-home') initializeApp();
+            if (item.id === 'nav-series') initializeApp({ type: 'Series' });
+            if (item.id === 'nav-movies') initializeApp({ type: 'Movie' });
+            if (item.id === 'nav-new') initializeApp({ category: 'New' });
+            if (item.id === 'nav-list') alert('My List feature coming soon!');
+        });
+    });
+}
+
+// Slider Scrolling
+function setupSliderScroll() {
+    document.querySelectorAll('.slider-container').forEach(container => {
+        const slider = container.querySelector('.slider');
+        const leftBtn = container.querySelector('.left-handle');
+        const rightBtn = container.querySelector('.right-handle');
+
+        if (leftBtn) {
+            leftBtn.addEventListener('click', () => {
+                slider.scrollBy({ left: -600, behavior: 'smooth' });
+            });
+        }
+
+        if (rightBtn) {
+            rightBtn.addEventListener('click', () => {
+                slider.scrollBy({ left: 600, behavior: 'smooth' });
+            });
+        }
+    });
+}
+
+// Open Modal by ID
+window.openModalById = function (movieId) {
+    const movie = movies.find(m => m.id === movieId);
+    if (movie) openModal(movie);
+};
+
+// Open Modal
+function openModal(movie) {
+    modalTitle.textContent = movie.title;
+    modalDesc.textContent = movie.description;
+    modalBackdrop.src = movie.backdrop;
+    modalRating.textContent = movie.rating;
+    modalYear.textContent = movie.year;
+    modalDuration.textContent = movie.duration;
+
+    modalPlayBtn.onclick = () => {
+        closeDetailModalFunc();
+        playMovie(movie.tmdbId, movie.type === 'Series');
+    };
+
+    const oldSection = document.getElementById('seasons-parts-section');
+    if (oldSection) oldSection.remove();
+
+    // Add Seasons (for Series)
+    if (movie.type === 'Series' && movie.seasons) {
+        const seasonsHTML = `
+                    <div id="seasons-parts-section" class="seasons-section">
+                        <h3>📺 Seasons</h3>
+                        <div class="seasons-grid">
+                            ${movie.seasons.map(s => `
+                                <div class="season-card" onclick="playEpisode(${movie.tmdbId}, ${s.number}, 1)">
+                                    <div class="season-number">S${s.number}</div>
+                                    <div class="season-info">
+                                        <span class="season-title">${s.title}</span>
+                                        <span class="season-episodes">${s.episodes} Episodes • ${s.year}</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+        relatedGrid.parentElement.insertAdjacentHTML('beforebegin', seasonsHTML);
+    }
+
+    // Add Parts (for Movies with sequels)
+    if (movie.type === 'Movie' && movie.parts) {
+        const partsHTML = `
+                    <div id="seasons-parts-section" class="parts-section">
+                        <h3>🎬 Movie Collection</h3>
+                        <div class="parts-grid">
+                            ${movie.parts.map(p => `
+                                <div class="part-card ${p.current ? 'current' : ''}" onclick="playMovie(${p.tmdbId}, false)">
+                                    <img src="${p.poster}" alt="${p.title}">
+                                    <div class="part-info">
+                                        <span class="part-title">${p.title}</span>
+                                        <span class="part-year">${p.year}</span>
+                                    </div>
+                                    ${p.current ? '<span class="current-badge">Current</span>' : ''}
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+        relatedGrid.parentElement.insertAdjacentHTML('beforebegin', partsHTML);
+    }
+
+    // Related: Same category
+    const related = movies.filter(m => m.id !== movie.id && m.categories.some(c => movie.categories.includes(c))).slice(0, 6);
+    renderRelated(related);
+
+    detailModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function renderRelated(list) {
+    relatedGrid.innerHTML = '';
+    list.forEach(m => {
+        const div = document.createElement('div');
+        div.className = 'grid-card';
+        div.onclick = () => {
+            openModal(m);
+            detailModal.scrollTop = 0;
+        };
+        div.innerHTML = `<img src="${m.poster}" loading="lazy">`;
+        relatedGrid.appendChild(div);
+    });
+}
+
+function closeDetailModalFunc() {
+    detailModal.classList.remove('active');
+    if (!searchOverlay.classList.contains('active')) {
+        document.body.style.overflow = '';
+    }
+    const section = document.getElementById('seasons-parts-section');
+    if (section) section.remove();
+}
+
+closeDetailModal.addEventListener('click', closeDetailModalFunc);
+detailModal.addEventListener('click', (e) => {
+    if (e.target === detailModal) closeDetailModalFunc();
+});
+
+// FULL MOVIE Player using vidsrc
+window.playMovie = function (tmdbId, isSeries = false) {
+    let embedUrl;
+    if (isSeries) {
+        embedUrl = `https://player.autoembed.cc/embed/tv/${tmdbId}/1/1`;
+    } else {
+        embedUrl = `https://player.autoembed.cc/embed/movie/${tmdbId}`;
+    }
+
+    videoContainer.innerHTML = `
+        <iframe 
+            src="${embedUrl}" 
+            allowfullscreen
+            webkitallowfullscreen
+            mozallowfullscreen
+            allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer"
+            style="width:100%;height:100%;border:none;">
+        </iframe>
+    `;
+    videoOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+};
+
+// Play specific episode
+window.playEpisode = function (tmdbId, season, episode) {
+    const embedUrl = `https://player.autoembed.cc/embed/tv/${tmdbId}/${season}/${episode}`;
+
+    videoContainer.innerHTML = `
+        <iframe 
+            src="${embedUrl}" 
+            allowfullscreen
+            webkitallowfullscreen
+            mozallowfullscreen
+            allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer"
+            style="width:100%;height:100%;border:none;">
+        </iframe>
+    `;
+    videoOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+};
+
+closeVideoBtn.addEventListener('click', () => {
+    videoOverlay.classList.remove('active');
+    videoContainer.innerHTML = '';
+    document.body.style.overflow = '';
+});
+
+// Fullscreen Toggle Logic
+const fullscreenVideoBtn = document.getElementById('fullscreen-video');
+if (fullscreenVideoBtn) {
+    fullscreenVideoBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.mozFullScreenElement && !document.msFullscreenElement) {
+            // ENTER FULLSCREEN & ROTATE
+            let reqPromise;
+            if (videoContainer.requestFullscreen) {
+                reqPromise = videoContainer.requestFullscreen();
+            } else if (videoContainer.webkitRequestFullscreen) {
+                reqPromise = videoContainer.webkitRequestFullscreen();
+            } else if (videoContainer.msRequestFullscreen) {
+                reqPromise = videoContainer.msRequestFullscreen();
+            } else if (videoContainer.children[0] && videoContainer.children[0].tagName === 'IFRAME') {
+                if (videoContainer.children[0].webkitEnterFullscreen) {
+                    videoContainer.children[0].webkitEnterFullscreen();
+                }
+            }
+
+            // Attempt to lock orientation to lanscape
+            if (reqPromise instanceof Promise) {
+                reqPromise.then(() => {
+                    if (screen.orientation && screen.orientation.lock) {
+                        screen.orientation.lock('landscape').catch(() => { });
+                    }
+                }).catch(() => { });
+            } else {
+                if (screen.orientation && screen.orientation.lock) {
+                    try { screen.orientation.lock('landscape').catch(() => { }); } catch (e) { }
+                }
+            }
+
+        } else {
+            // EXIT FULLSCREEN & UNLOCK
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+
+            if (screen.orientation && screen.orientation.unlock) {
+                try { screen.orientation.unlock(); } catch (e) { }
+            }
+        }
+    });
+}
+
+// ==========================================
+// PROFESSIONAL SERVER SWITCHING SYSTEM
+// ==========================================
+
+let currentServer = 'auto'; // Default server
+let activeTmdbId = null;
+let activeIsSeries = false;
+let activeSeason = 1;
+let activeEpisode = 1;
+
+// Handle Server Selection
+document.querySelectorAll('.server-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        // Visual Update
+        document.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+
+        // State Update
+        currentServer = e.target.getAttribute('data-server');
+
+        // Reload Video
+        if (activeTmdbId) {
+            loadVideoContent();
+        }
+    });
+});
+
+function loadVideoContent() {
+    let baseUrl;
+    let isAutoEmbed = false;
+    
+    switch (currentServer) {
+        case 'auto': 
+            baseUrl = 'https://player.autoembed.cc/embed'; 
+            isAutoEmbed = true;
+            break;
+        case 'vme': 
+            baseUrl = 'https://vidsrc.me/embed'; 
+            break;
+        case 'binge': 
+            baseUrl = 'https://vidbinge.dev/embed'; 
+            break;
+        default: 
+            baseUrl = 'https://player.autoembed.cc/embed';
+            isAutoEmbed = true;
+    }
+
+    let embedUrl;
+    if (activeIsSeries) {
+        if (isAutoEmbed) {
+            embedUrl = `${baseUrl}/tv/${activeTmdbId}/${activeSeason}/${activeEpisode}`;
+        } else {
+            embedUrl = `${baseUrl}/tv?tmdb=${activeTmdbId}&season=${activeSeason}&episode=${activeEpisode}`;
+            // standard vidsrc format fallback
+            if (currentServer === 'vme') {
+                 embedUrl = `${baseUrl}/tv/${activeTmdbId}/${activeSeason}/${activeEpisode}`;
+            }
+        }
+    } else {
+        if (isAutoEmbed || currentServer === 'vme') {
+            embedUrl = `${baseUrl}/movie/${activeTmdbId}`;
+        } else {
+            embedUrl = `${baseUrl}/movie?tmdb=${activeTmdbId}`;
+        }
+    }
+
+    videoContainer.innerHTML = `
+        <iframe 
+            src="${embedUrl}" 
+            allowfullscreen
+            webkitallowfullscreen
+            mozallowfullscreen
+            allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer"
+            style="width:100%;height:100%;border:none;">
+        </iframe>
+    `;
+}
+
+// Override Play Functions to use new System
+window.playMovie = function (tmdbId, isSeries = false) {
+    activeTmdbId = tmdbId;
+    activeIsSeries = isSeries;
+    activeSeason = 1;
+    activeEpisode = 1;
+
+    loadVideoContent();
+
+    videoOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+};
+
+window.playEpisode = function (tmdbId, season, episode) {
+    activeTmdbId = tmdbId;
+    activeIsSeries = true;
+    activeSeason = season;
+    activeEpisode = episode;
+
+    loadVideoContent();
+
+    videoOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+};
