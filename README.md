@@ -1,11 +1,13 @@
-# ChatHup — تحميل
+# ChatHup — تحميل (الإصدار 5.2.1)
 
-**[⬇️ تحميل ChatHup لأندرويد (APK)](https://github.com/maycalmrdem-star/cinenova-releases/raw/chathup/ChatHup-android.apk)**
+**[⬇️ أندرويد (APK، 6.2 MB)](https://github.com/maycalmrdem-star/cinenova-releases/raw/chathup/ChatHup-android.apk)** ·
+**[⬇️ ويندوز (EXE، 99 MB)](https://github.com/maycalmrdem-star/cinenova-releases/raw/chathup/ChatHup-Setup.exe)**
 
-تواصل اجتماعي ورسائل يعمل حتى بدون إنترنت عبر البلوتوث.
+تواصل اجتماعي ورسائل ومكالمات، يعمل حتى بدون إنترنت عبر البلوتوث.
 
-1. اضغط الرابط أعلاه وافتح الملف بعد التنزيل.
-2. إن طلب أندرويد، اسمح بـ «التثبيت من هذا المصدر».
-3. اضغط «تثبيت».
+1. اضغط الرابط وافتح الملف بعد التنزيل.
+2. على أندرويد، إن طُلب منك، اسمح بـ «التثبيت من هذا المصدر» ثم اضغط «تثبيت».
+3. على ويندوز، إن ظهرت رسالة «Windows protected your PC»، اضغط More info ثم Run anyway.
 
-SHA-256: `73a337cecf39594e2a95082c53bf6d5b4f92e4f4e24f633a90a6978690b6172e`
+التحديثات التالية تصل من داخل التطبيق (الإعدادات ← التحديثات) عبر `latest.json` في هذا المجلد.
+البصمات الرقمية في `SHA256SUMS.txt`.
