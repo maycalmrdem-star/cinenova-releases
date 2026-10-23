@@ -77,7 +77,7 @@
     fetch(API, {
       method: 'POST',
       headers: Object.assign({ Prefer: 'return=minimal' }, HEADERS),
-      body: JSON.stringify({ name: name.value.trim().slice(0, 40), rating: rating, body: text.value.trim().slice(0, 500), version: '5.1.0' })
+      body: JSON.stringify({ name: name.value.trim().slice(0, 40), rating: rating, body: text.value.trim().slice(0, 500), version: '5.2.0' })
     }).then(function (r) {
       if (!r.ok) throw r;
       try { localStorage.setItem(MINE, '1'); } catch (err) {}
