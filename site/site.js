@@ -1,5 +1,7 @@
 // Reviews live in Supabase (table site_reviews, see reviews.sql). Plain fetch, no library.
 (function () {
+  // Friend QR codes point at /?add-friend=…; those belong to the web app.
+  if (/[?&]add-friend=/.test(location.search)) { location.replace('/app' + location.search); return; }
   var API = 'https://yaohklgfegdexsniehhi.supabase.co/rest/v1/site_reviews';
   var KEY = 'sb_publishable_etFJKue6zjzxyyIEFNKxvQ_npH9SW3_';
   var HEADERS = { apikey: KEY, 'Content-Type': 'application/json' };

@@ -1,0 +1,67 @@
+{
+  "name": "ChatHup — Super Social App",
+  "short_name": "ChatHup",
+  "description": "شبكة اجتماعية ودردشة تعمل حتى بدون إنترنت عبر البلوتوث.",
+  "theme_color": "#05060a",
+  "background_color": "#05060a",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/app",
+  "scope": "/",
+  "id": "/app",
+  "categories": [
+    "social",
+    "communication"
+  ],
+  "lang": "ar",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "الرسائل",
+      "short_name": "Chat",
+      "url": "/?view=messages",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "دردشة بدون إنترنت",
+      "short_name": "Nearby",
+      "url": "/?view=nearby",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "ريلز",
+      "short_name": "Reels",
+      "url": "/?view=reels",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
