@@ -1,1 +1,0 @@
-import{j as r}from"./main-BSthI167.js";const n=({type:s="text",className:e=""})=>s==="icon"?r.jsx("span",{className:`prime-badge-p flex-shrink-0 ${e}`,children:"P"}):r.jsx("span",{className:`prime-badge-text flex-shrink-0 ${e}`,children:"PRIME"});export{n as P};

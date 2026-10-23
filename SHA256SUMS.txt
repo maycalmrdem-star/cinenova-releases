@@ -1,0 +1,2 @@
+368c312e8f3283af78b707d5bdef2d4ae3249cb3cd0ed790d2da0e187a4ba46a  ChatHup-android.apk
+b6071e279aca0e2db655bf3dd8d90548ef834690a4629b43009de281d5bc8f51  ChatHup-Setup.exe

@@ -1,0 +1,15 @@
+{
+  "version": "5.2.1",
+  "date": "2026-10-23T22:59:31.936Z",
+  "notes": "محادثة ومكالمات ورسائل صوتية بتصميم جديد، الرسائل المؤقتة، وتحديثات تلقائية من داخل التطبيق.",
+  "android": {
+    "file": "ChatHup-android.apk",
+    "sha256": "368c312e8f3283af78b707d5bdef2d4ae3249cb3cd0ed790d2da0e187a4ba46a",
+    "size": 6167902
+  },
+  "windows": {
+    "file": "ChatHup-Setup.exe",
+    "sha256": "b6071e279aca0e2db655bf3dd8d90548ef834690a4629b43009de281d5bc8f51",
+    "size": 104150247
+  }
+}
