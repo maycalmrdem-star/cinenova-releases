@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>سياسة الخصوصية — ChatHup</title>
+<meta name="description" content="ما البيانات التي يجمعها ChatHup، ولماذا، ومع من تُشارك، وكيف تنزّلها أو تحذفها.">
+<meta name="theme-color" content="#eff1f5">
+<link rel="canonical" href="https://chatapp31.vercel.app/privacy">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/style.css">
+<script src="/site.js" defer></script>
+</head>
+<body>
+
+<a class="vh" href="#main">تخطَّ إلى المحتوى</a>
+<header class="top" id="top">
+  <div class="shell">
+    <a class="brand" href="/"><img src="/icon.png" alt="" width="34" height="34">ChatHup</a>
+    <nav class="links" aria-label="أقسام الموقع">
+      <a href="/chat">المحادثة</a>
+      <a href="/updates">التحديثات</a>
+      <a href="/#download">التحميل</a>
+      <a href="/privacy">الخصوصية</a>
+      <a href="/help">المساعدة</a>
+    </nav>
+    <div class="top-end">
+      <a class="login" href="/app"><svg class="ic" aria-hidden="true"><use href="/icons.svg#login"/></svg>تسجيل الدخول</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="فتح القائمة"><svg class="ic" aria-hidden="true"><use href="/icons.svg#menu"/></svg></button>
+    </div>
+  </div>
+  <nav class="drawer" id="drawer" aria-label="القائمة" hidden>
+    <a href="/chat">المحادثة</a><a href="/updates">التحديثات</a><a href="/#download">التحميل</a><a href="/privacy">الخصوصية</a><a href="/help">المساعدة</a>
+  </nav>
+</header>
+
+<main id="main" class="shell">
+  <div class="doc-head">
+    <h1>سياسة الخصوصية</h1>
+    <p>هذه الصفحة تشرح ما يجمعه ChatHup من بيانات، ولماذا، ومع من تُشارك، وكيف تنزّلها أو تحذفها. تنطبق على تطبيق أندرويد وويندوز ونسخة المتصفح وهذا الموقع.</p>
+    <p class="stamp">آخر تحديث: 24 أكتوبر 2026</p>
+  </div>
+
+  <div class="doc">
+    <nav class="toc" aria-label="محتويات الصفحة">
+      <b>في هذه الصفحة</b>
+      <ol>
+        <li><a href="#short">باختصار</a></li>
+        <li><a href="#collect">ما نجمعه</a></li>
+        <li><a href="#bluetooth">وضع البلوتوث</a></li>
+        <li><a href="#use">كيف نستخدمها</a></li>
+        <li><a href="#share">مع من تُشارك</a></li>
+        <li><a href="#security">الأمان والتشفير</a></li>
+        <li><a href="#keep">الاحتفاظ والحذف</a></li>
+        <li><a href="#rights">حقوقك</a></li>
+        <li><a href="#storage">التخزين في المتصفح</a></li>
+        <li><a href="#kids">الأطفال</a></li>
+        <li><a href="#changes">التغييرات والتواصل</a></li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h2 id="short">باختصار</h2>
+      <ul>
+        <li>نجمع ما يلزم لتشغيل حسابك: الاسم والبريد الإلكتروني وكلمة المرور، وما تنشره وترسله.</li>
+        <li>لا نعرض إعلانات، ولا نستعمل أدوات تتبّع إعلانية في الموقع أو التطبيق.</li>
+        <li>الرسائل الخاصة مشفّرة من طرف لطرف، وكذلك الرسائل التي تمر عبر البلوتوث.</li>
+        <li>تستطيع تنزيل نسخة من بياناتك أو حذف حسابك نهائياً من داخل التطبيق: الإعدادات ← الأمان والبيانات.</li>
+      </ul>
+
+      <h2 id="collect">ما نجمعه</h2>
+      <table>
+        <thead><tr><th>البيانات</th><th>متى</th><th>لماذا</th></tr></thead>
+        <tbody>
+          <tr><td>الاسم الكامل، البريد الإلكتروني، كلمة المرور</td><td>عند إنشاء الحساب</td><td>لتسجيل الدخول. كلمة المرور تُحفظ مُجزّأة (hashed) ولا نستطيع قراءتها.</td></tr>
+          <tr><td>سؤال الأمان وإجابته</td><td>إن اخترت ضبطه</td><td>لتستعيد حسابك إن نسيت كلمة المرور.</td></tr>
+          <tr><td>الملف الشخصي: اسم المستخدم، الصورة، وما تضيفه إليه</td><td>عندما تعدّله</td><td>ليتعرّف عليك أصدقاؤك.</td></tr>
+          <tr><td>المنشورات والقصص والتعليقات والإعجابات والمحفوظات، ومن شاهد قصصك</td><td>عندما تستعمل هذه الميزات</td><td>لعرضها لمن تختار.</td></tr>
+          <tr><td>الرسائل: النصوص والصور والفيديو والرسائل الصوتية</td><td>عندما ترسلها</td><td>لإيصالها إلى المستلم.</td></tr>
+          <tr><td>موقعك الجغرافي</td><td>فقط عندما تضغط «إرسال الموقع» في محادثة</td><td>ليصل إلى من أرسلته له. لا نتتبّع موقعك في الخلفية.</td></tr>
+          <tr><td>المتابعات، الأصدقاء المقربون، الحظر، الكتم، الكلمات المخفية</td><td>عندما تضبطها</td><td>لتطبيق اختياراتك.</td></tr>
+          <tr><td>إعداداتك واهتماماتك</td><td>عندما تختارها</td><td>لتخصيص التطبيق وما يظهر لك.</td></tr>
+          <tr><td>البلاغات التي ترسلها</td><td>عند الإبلاغ عن محتوى أو حساب</td><td>لمراجعتها واتخاذ إجراء.</td></tr>
+          <tr><td>بيانات تقنية: عنوان IP، نوع الجهاز والمتصفح، أوقات الطلبات</td><td>عند كل اتصال بخوادمنا</td><td>لتشغيل الخدمة وحمايتها من الإساءة. تحفظها خدمات الاستضافة في سجلاتها.</td></tr>
+        </tbody>
+      </table>
+      <h3>أذونات الجهاز</h3>
+      <p>يطلب التطبيق الإذن قبل استعمال الكاميرا (الصور والقصص ومكالمات الفيديو)، والميكروفون (الرسائل الصوتية والمكالمات)، والموقع (عند إرساله فقط)، والبلوتوث (وضع بدون إنترنت). تستطيع رفض أي إذن أو سحبه من إعدادات جهازك، وستتوقف الميزة المرتبطة به فقط.</p>
+
+      <h2 id="bluetooth">وضع البلوتوث</h2>
+      <p>عندما لا يتوفر الإنترنت، يتصل ChatHup بالهواتف القريبة التي تشغّل التطبيق، ويمرّر الرسائل عبرها حتى تصل. لتحقيق ذلك:</p>
+      <ul>
+        <li>يُعلن هاتفك عن وجوده للهواتف القريبة بمعرّف خاص بالتطبيق، حتى تتمكن من إيصال الرسائل.</li>
+        <li>الرسائل الخاصة مشفّرة بين جهازك وجهاز المستلم، فلا تستطيع الهواتف الوسيطة قراءة محتواها.</li>
+        <li>تستطيع إيقاف البلوتوث من جهازك في أي وقت، وسيعمل التطبيق عبر الإنترنت فقط.</li>
+      </ul>
+
+      <h2 id="use">كيف نستخدم البيانات</h2>
+      <ul>
+        <li>لتشغيل حسابك وإيصال رسائلك ومنشوراتك ومكالماتك.</li>
+        <li>لحماية المستخدمين: كشف الحسابات المزيفة والرسائل المزعجة، ومراجعة البلاغات.</li>
+        <li>لإصلاح الأعطال وتحسين التطبيق.</li>
+      </ul>
+      <p>لا نستعمل بياناتك للإعلانات، ولا نبيعها لأي جهة.</p>
+
+      <h2 id="share">مع من تُشارك</h2>
+      <p>نعتمد على مزوّدي خدمة لتشغيل ChatHup. يعالج كل منهم البيانات اللازمة لعمله فقط:</p>
+      <table>
+        <thead><tr><th>المزوّد</th><th>ما يفعله</th></tr></thead>
+        <tbody>
+          <tr><td>Supabase</td><td>قاعدة البيانات، تسجيل الدخول، وتخزين الصور والملفات.</td></tr>
+          <tr><td>Vercel</td><td>استضافة هذا الموقع ونسخة المتصفح.</td></tr>
+          <tr><td>GitHub</td><td>استضافة ملفات التحميل والتحديثات.</td></tr>
+          <tr><td>خوادم STUN من Google وCloudflare</td><td>تساعد جهازين على الاتصال مباشرة في المكالمات، وترى عنوان IP فقط.</td></tr>
+          <tr><td>GIPHY وTenor</td><td>البحث عن الصور المتحركة: تصلها كلمات البحث التي تكتبها.</td></tr>
+          <tr><td>Apple iTunes Search</td><td>البحث عن الأغاني لإضافتها إلى القصص: تصلها كلمات البحث.</td></tr>
+          <tr><td>Google Fonts</td><td>الخطوط في هذا الموقع.</td></tr>
+        </tbody>
+      </table>
+      <p>نكشف البيانات أيضاً إن ألزمنا القانون بذلك، أو لحماية شخص من خطر جدّي.</p>
+
+      <h2 id="security">الأمان والتشفير</h2>
+      <ul>
+        <li>كل الاتصالات بين التطبيق وخوادمنا مشفّرة عبر HTTPS.</li>
+        <li>الرسائل الخاصة مشفّرة من طرف لطرف، وكذلك الرسائل عبر البلوتوث.</li>
+        <li>قواعد صلاحيات في قاعدة البيانات تمنع أي حساب من قراءة ما لا يخصه.</li>
+        <li>يتحقق التطبيق من البصمة الرقمية لكل تحديث قبل تثبيته، والبصمات منشورة في <a href="https://github.com/maycalmrdem-star/cinenova-releases/blob/chathup/SHA256SUMS.txt" rel="noopener">SHA256SUMS.txt</a>.</li>
+      </ul>
+      <div class="callout"><b>وجدت ثغرة أمنية؟</b><p>راسلنا على <a href="mailto:riad.dz.mahroug@gmail.com?subject=Report%20from%20ChatHup%20app">riad.dz.mahroug@gmail.com</a> قبل نشرها، مع خطوات إعادة إنتاجها. سنردّ ونعمل على إصلاحها، ولن نلاحق من يبلّغ بحسن نية.</p></div>
+
+      <h2 id="keep">الاحتفاظ والحذف</h2>
+      <ul>
+        <li>نحتفظ ببياناتك ما دام حسابك موجوداً.</li>
+        <li>الرسائل المؤقتة تُحذف تلقائياً بعد المدة التي تختارها: ساعة أو يوم أو أسبوع.</li>
+        <li>عند حذف حسابك من الإعدادات، يُحذف نهائياً مع منشوراتك وقصصك وتعليقاتك ورسائلك ومتابعيك. لا يمكن التراجع.</li>
+        <li>نسخ الرسائل التي أرسلتها تبقى عند من استلمها إن كان قد حفظها على جهازه.</li>
+      </ul>
+
+      <h2 id="rights">حقوقك</h2>
+      <ul>
+        <li><b>الاطلاع والنسخ:</b> الإعدادات ← الأمان والبيانات ← «تنزيل بياناتك» يعطيك ملفاً يحتوي ملفك الشخصي وإعداداتك ومنشوراتك وتعليقاتك وقصصك ورسائلك.</li>
+        <li><b>التصحيح:</b> عدّل ملفك الشخصي في أي وقت.</li>
+        <li><b>الحذف:</b> الإعدادات ← الأمان والبيانات ← «حذف الحساب». خطوات مفصّلة في <a href="/help#delete">صفحة المساعدة</a>.</li>
+        <li><b>الاعتراض والأسئلة:</b> راسلنا على <a href="mailto:riad.dz.mahroug@gmail.com?subject=Report%20from%20ChatHup%20app">riad.dz.mahroug@gmail.com</a>.</li>
+      </ul>
+
+      <h2 id="storage">التخزين في المتصفح</h2>
+      <p>هذا الموقع لا يستعمل ملفات تعريف الارتباط (cookies). نسخة المتصفح من التطبيق تحفظ جلسة تسجيل الدخول وإعداداتك في التخزين المحلي للمتصفح (localStorage) لتبقى مسجّلاً. تسجيل الخروج أو مسح بيانات الموقع يحذفها.</p>
+
+      <h2 id="kids">الأطفال</h2>
+      <p>ChatHup غير موجّه للأطفال دون 13 عاماً، ولا ننشئ لهم حسابات عن قصد. إن علمت أن طفلاً دون هذا السن أنشأ حساباً، راسلنا لحذفه.</p>
+
+      <h2 id="changes">التغييرات والتواصل</h2>
+      <p>إن غيّرنا هذه السياسة تغييراً مهماً، سننشر التاريخ الجديد أعلى الصفحة ونعلن عنه في <a href="/updates">صفحة التحديثات</a>. لأي سؤال عن خصوصيتك: <a href="mailto:riad.dz.mahroug@gmail.com?subject=Report%20from%20ChatHup%20app">riad.dz.mahroug@gmail.com</a>.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="foot" style="margin-top:96px">
+  <div class="shell">
+    <div>
+      <a class="brand" href="/"><img src="/icon.png" alt="" width="34" height="34">ChatHup</a>
+      <p>تواصل اجتماعي ومحادثات ومكالمات، يعمل حتى بدون إنترنت عبر البلوتوث.</p>
+    </div>
+    <div><h4>التطبيق</h4><ul><li><a href="/chat">المحادثة</a></li><li><a href="/updates">التحديثات</a></li><li><a href="/#download">التحميل</a></li><li><a href="/app">تسجيل الدخول</a></li></ul></div>
+    <div><h4>الدعم</h4><ul><li><a href="/help">الأسئلة الشائعة</a></li><li><a href="/help#contact">تواصل معنا</a></li><li><a href="/help#report">الإبلاغ عن إساءة</a></li><li><a href="/help#delete">حذف الحساب</a></li></ul></div>
+    <div><h4>قانوني</h4><ul><li><a href="/privacy">سياسة الخصوصية</a></li><li><a href="/terms">شروط الاستخدام</a></li><li><a href="/privacy#security">الأمان</a></li></ul></div>
+    <div class="legal"><span>© 2026 ChatHup</span><span>الإصدار 5.2.1</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

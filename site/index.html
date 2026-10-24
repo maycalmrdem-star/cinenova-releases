@@ -3,171 +3,225 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ChatHup — تواصل حتى بدون إنترنت</title>
-<meta name="description" content="حمّل ChatHup لأندرويد: منشورات وقصص ورسائل، وتعمل عبر البلوتوث بدون إنترنت.">
-<meta name="theme-color" content="#06080f">
-<meta property="og:title" content="ChatHup">
-<meta property="og:description" content="تواصل مع أصدقائك حتى بدون إنترنت.">
-<meta property="og:image" content="/icon.png">
-<link rel="icon" href="/icon.png">
+<title>ChatHup — رسائلك تصل حتى لو انقطع الإنترنت</title>
+<meta name="description" content="ChatHup تطبيق تواصل: محادثات ورسائل صوتية ومكالمات ومنشورات وقصص، وعندما تنقطع الشبكة تنتقل رسائلك عبر البلوتوث من هاتف لهاتف.">
+<meta name="theme-color" content="#eff1f5">
+<link rel="canonical" href="https://chatapp31.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ChatHup">
+<meta property="og:title" content="ChatHup — رسائلك تصل حتى لو انقطع الإنترنت">
+<meta property="og:description" content="محادثات ورسائل صوتية ومكالمات، وعندما تنقطع الشبكة تنتقل رسائلك عبر البلوتوث.">
+<meta property="og:image" content="https://chatapp31.vercel.app/icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://yaohklgfegdexsniehhi.supabase.co" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Readex+Pro:wght@500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="/style.css">
 <script src="/site.js" defer></script>
 </head>
 <body>
 
-<div class="sky" aria-hidden="true"><span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span></div>
-<div class="page">
-<div class="wrap">
-  <nav>
-    <div class="brand"><img alt="" src="/icon.png" width="38" height="38"> ChatHup</div>
-    <div class="nav-links"><a href="/app">نسخة الويب</a><a href="#download">التحميل</a><a href="#versions">الإصدارات</a><a href="#features">المميزات</a><a href="#reviews">آراء المستخدمين</a></div>
+<a class="vh" href="#main">تخطَّ إلى المحتوى</a>
+<header class="top" id="top">
+  <div class="shell">
+    <a class="brand" href="/"><img src="/icon.png" alt="" width="34" height="34">ChatHup</a>
+    <nav class="links" aria-label="أقسام الموقع">
+      <a href="/chat">المحادثة</a>
+      <a href="/updates">التحديثات</a>
+      <a href="/#download">التحميل</a>
+      <a href="/privacy">الخصوصية</a>
+      <a href="/help">المساعدة</a>
+    </nav>
+    <div class="top-end">
+      <a class="login" href="/app"><svg class="ic" aria-hidden="true"><use href="/icons.svg#login"/></svg>تسجيل الدخول</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="فتح القائمة"><svg class="ic" aria-hidden="true"><use href="/icons.svg#menu"/></svg></button>
+    </div>
+  </div>
+  <nav class="drawer" id="drawer" aria-label="القائمة" hidden>
+    <a href="/chat">المحادثة</a><a href="/updates">التحديثات</a><a href="/#download">التحميل</a><a href="/privacy">الخصوصية</a><a href="/help">المساعدة</a>
   </nav>
+</header>
 
-  <header class="hero">
+<main id="main">
+  <section class="shell hero">
     <div>
-      <span class="eyebrow"><span class="dot"></span> الإصدار 5.2.1 متاح الآن</span>
-      <h1>تواصل مع أصدقائك <span class="grad">حتى بدون إنترنت</span></h1>
-      <p class="lead">منشورات، قصص بـ 25 فلتراً وأغانٍ، رسائل ومكالمات — وعندما ينقطع الإنترنت، <b>تنتقل رسائلك عبر البلوتوث</b> من هاتف لهاتف.</p>
+      <h1>رسائلك تصل <em>حتى لو انقطع الإنترنت</em></h1>
+      <p class="lead">ChatHup تطبيق تواصل كامل: محادثات، رسائل صوتية، مكالمات، منشورات وقصص. وعندما تسقط الشبكة، تقفز رسالتك عبر البلوتوث من هاتف لهاتف حتى تصل إلى صديقك.</p>
       <div class="cta">
-        <a class="btn" href="/ChatHup-android.apk" download>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3v11m0 0l-4.5-4.5M12 14l4.5-4.5M5 19h14" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          تحميل لأندرويد <small>6.2 MB</small>
-        </a>
-        <a class="btn ghost" href="/app">افتح في المتصفح</a>
-        <a class="btn ghost" href="/windows">ويندوز</a>
+        <a class="btn btn-blue" href="/ChatHup-android.apk" download><svg class="ic" aria-hidden="true"><use href="/icons.svg#download"/></svg>تحميل لأندرويد <small class="ltr">6.2 MB</small></a>
+        <a class="btn btn-line" href="/windows"><svg class="ic" aria-hidden="true"><use href="/icons.svg#windows"/></svg>ويندوز</a>
       </div>
-      <p class="meta-line">مجاني · أندرويد · ويندوز · الويب · بدون إعلانات</p>
+      <p class="release"><b>الإصدار 5.2.1 متاح الآن</b> · أندرويد 7 فما فوق · مجاني وبدون إعلانات</p>
     </div>
-    <div class="stage" aria-hidden="true">
-      <div class="phone"><div class="screen">
-        <div class="bar"><span>ChatHup</span><span>♡ ✉</span></div>
-        <div class="stories"><span class="st"><span style="background:#3b82f6"></span></span><span class="st cf"><span style="background:#10b981"></span></span><span class="st"><span style="background:#ec4899"></span></span><span class="st"><span style="background:#8b5cf6"></span></span><span class="st"><span style="background:#f59e0b"></span></span></div>
-        <div class="post"><div class="photo"><span class="chip">♪ Ya Rayah · Nashville</span></div><div class="actions"><span class="heart">♥</span><span>💬</span><span>↻</span></div><div class="line" style="width:60%"></div><div class="line" style="width:40%"></div></div>
-        <div class="tabbar"><span>⌂</span><span>▶</span><span>＋</span><span>🛍</span><span>☺</span></div>
-      </div></div>
-      <span class="bubble b1">📡 بدون إنترنت — عبر البلوتوث</span>
-      <span class="bubble b2">🔒 رسائل مشفّرة</span>
-      <span class="bubble b3">🎵 قصص بالأغاني</span>
-    </div>
-  </header>
 
-  <section id="download">
-    <h2>حمّل التطبيق</h2>
-    <p class="sub">اضغط وسيبدأ التنزيل مباشرة. بعد التنزيل افتح الملف واسمح بالتثبيت.</p>
-    <div class="dl">
-      <article class="card">
-        <span class="logo la"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.38.38 0 00-.66-.38l-1.86 3.22a11.4 11.4 0 00-9.84 0L5.22 5.92a.38.38 0 10-.66.38L6.4 9.48A10.8 10.8 0 001 18h22a10.8 10.8 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg></span>
-        <h3>أندرويد</h3>
-        <p>الإصدار 5.2.1 · ملف APK · 6.2 MB · أندرويد 7 فما فوق</p>
-        <a class="btn" href="/ChatHup-android.apk" download>تحميل APK</a>
-      </article>
-      <article class="card">
-        <span class="logo lw"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M3 5.1l7.4-1v7.2H3V5.1zm8.4-1.15L21 2.6v8.7h-9.6V3.95zM3 12.7h7.4v7.2L3 18.9v-6.2zm8.4 0H21v8.7l-9.6-1.35V12.7z"/></svg></span>
-        <h3>ويندوز</h3>
-        <p>الإصدار 5.2.1 · مثبّت EXE · 99 MB · ويندوز 10 و 11 · 64 بت</p>
-        <a class="btn" href="/windows">تحميل لويندوز</a>
-      </article>
-      <article class="card">
-        <span class="logo lweb"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></span>
-        <h3>الويب</h3>
-        <p>استخدمه من المتصفح على أي جهاز بدون تثبيت، ويمكنك إضافته للشاشة الرئيسية.</p>
-        <a class="btn" href="/app">افتح نسخة الويب</a>
-      </article>
+    <div class="field" id="hero-demo" data-demo="hero">
+      <div class="field-head">
+        <span class="demo-note">محادثة تجريبية — جرّب أن تكتب</span>
+        <button class="net" type="button" role="switch" aria-checked="false" data-net>
+          <span data-net-label>اقطع الإنترنت</span><span class="knob" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="phone-ui">
+        <div class="thread-head">
+          <span class="avatar av-s" aria-hidden="true">س</span>
+          <div><b>سارة</b><span class="presence" data-presence>متصلة الآن</span></div>
+          <div class="thread-tools" aria-hidden="true"><span><svg class="ic"><use href="/icons.svg#phone"/></svg></span><span><svg class="ic"><use href="/icons.svg#video"/></svg></span></div>
+        </div>
+        <div class="msgs" data-msgs aria-live="polite"><span class="day">اليوم</span></div>
+        <form class="compose" data-compose>
+          <label class="vh" for="hero-input">اكتب رسالة</label>
+          <input id="hero-input" autocomplete="off" maxlength="200" placeholder="اكتب رسالة…">
+          <button class="send" type="submit" aria-label="إرسال" disabled><svg class="ic" aria-hidden="true"><use href="/icons.svg#send"/></svg></button>
+        </form>
+      </div>
+      <div class="relay" aria-hidden="true" data-relay>
+        <span class="node lit"><span class="dev"></span>هاتفك</span>
+        <span class="hop"><i class="pkt"></i></span>
+        <span class="node"><span class="dev"></span>هاتف قريب</span>
+        <span class="hop"><i class="pkt"></i></span>
+        <span class="node"><span class="dev"></span>هاتف قريب</span>
+        <span class="hop"><i class="pkt"></i></span>
+        <span class="node"><span class="dev"></span>سارة</span>
+      </div>
     </div>
   </section>
 
-  <section id="versions">
-    <h2>الإصدارات</h2>
-    <p class="sub">كل ما تغيّر في ChatHup، من الأحدث إلى الأقدم.</p>
-    <div class="timeline">
+  <section class="shell sec" id="how">
+    <h2>كيف تصل رسالة بدون إنترنت؟</h2>
+    <p class="intro">لا تحتاج أن تفعل شيئاً. ChatHup يختار الطريق بنفسه حسب حالة الشبكة.</p>
+    <div class="mesh">
+      <div>
+        <span class="state"><svg class="ic" aria-hidden="true"><use href="/icons.svg#check"/></svg>الإنترنت متاح</span>
+        <h3>تعمل كأي تطبيق محادثة</h3>
+        <p>رسائلك ومكالماتك تمر عبر الإنترنت وتصل فوراً، على الهاتف والكمبيوتر والمتصفح.</p>
+      </div>
+      <div>
+        <span class="state"><svg class="ic" aria-hidden="true"><use href="/icons.svg#wifi-off"/></svg>انقطعت الشبكة</span>
+        <h3>يبحث عن هواتف قريبة</h3>
+        <p>في الملعب، في الجبل، أو أثناء انقطاع الشبكة: يتصل التطبيق عبر البلوتوث بالهواتف القريبة التي تشغّل ChatHup.</p>
+      </div>
+      <div>
+        <span class="state"><svg class="ic" aria-hidden="true"><use href="/icons.svg#bluetooth"/></svg>قفزة بعد قفزة</span>
+        <h3>تمرّ الرسالة حتى تصل</h3>
+        <p>كل هاتف يمرّر رسالتك للهاتف التالي حتى تبلغ صديقك. والرسائل الخاصة مشفّرة من طرف لطرف، فلا تقرؤها الهواتف الوسيطة.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="chat">
+    <div class="shell">
+      <div>
+        <h2>محادثة صُنعت لتُستعمل كل يوم</h2>
+        <p>في الإصدار 5.2 أعدنا بناء المحادثة بالكامل على الهاتف والكمبيوتر.</p>
+        <ul>
+          <li><svg class="ic" aria-hidden="true"><use href="/icons.svg#mic"/></svg>رسائل صوتية بموجة حقيقية، وتشغيل بسرعة 1.5× و2×.</li>
+          <li><svg class="ic" aria-hidden="true"><use href="/icons.svg#reply"/></svg>ردّ على أي رسالة بالسحب، وتفاعلات سريعة.</li>
+          <li><svg class="ic" aria-hidden="true"><use href="/icons.svg#timer"/></svg>رسائل مؤقتة تختفي بعد ساعة أو يوم أو أسبوع.</li>
+          <li><svg class="ic" aria-hidden="true"><use href="/icons.svg#video"/></svg>مكالمات صوت وفيديو، مع مشاركة الشاشة ومؤشر جودة الاتصال.</li>
+        </ul>
+        <a class="btn btn-line" href="/chat">جرّب المحادثة كاملة<svg class="ic" aria-hidden="true"><use href="/icons.svg#arrow"/></svg></a>
+      </div>
+      <div class="sample" aria-label="مثال لمحادثة">
+        <span class="ghost-note"><svg class="ic" aria-hidden="true"><use href="/icons.svg#timer"/></svg>الرسائل في هذه المحادثة تختفي بعد يوم</span>
+        <div class="b them"><span class="quote">ياسين: نتلاقاو عند الباب 3؟</span>إيه، راني نستنى فيكم قدام الباب</div>
+        <div class="b me has-react">جايين، خمس دقايق برك<span class="react">❤️ 2</span></div>
+        <div class="b them">
+          <span class="voice"><span class="play" aria-hidden="true"><svg class="ic"><use href="/icons.svg#play"/></svg></span><span class="wave" data-wave="34"></span><span class="speed">1.5×</span></span>
+          <span class="t">0:12</span>
+        </div>
+        <div class="b me">سمعتك، شفتكم من بعيد</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="shell sec" id="updates">
+    <h2>آخر التحديثات</h2>
+    <p class="intro">التحديثات تصل من داخل التطبيق على أندرويد وويندوز، بدون حذف أو إعادة تثبيت.</p>
+    <div class="vers">
       <article class="ver now">
-        <header><b class="v">5.2.1</b><span class="tag">الحالي</span></header>
+        <div class="ver-head"><b>5.2.1</b><span>الإصدار الحالي</span></div>
         <ul>
           <li>التحديثات تصل تلقائياً من داخل التطبيق على أندرويد وويندوز، بدون حذف أو إعادة تثبيت.</li>
         </ul>
       </article>
       <article class="ver">
-        <header><b class="v">5.2.0</b><span class="tag old">سابق</span></header>
+        <div class="ver-head"><b>5.2.0</b><span>محادثة جديدة</span></div>
         <ul>
-          <li>تصميم جديد للمحادثة على الهاتف والكمبيوتر، مع فقاعات أوضح وتفاعلات ورد بالسحب.</li>
-          <li>رسائل صوتية جديدة: اضغط مطولاً للتسجيل، موجة صوتية حقيقية، وسرعة تشغيل 1.5× و2×.</li>
-          <li>مكالمات تعمل بثبات: نغمة رنين، تشغيل الكاميرا أثناء المكالمة، مشاركة الشاشة، ومؤشر جودة الاتصال.</li>
-          <li>الرسائل المؤقتة: تختفي الرسائل بعد ساعة أو يوم أو أسبوع.</li>
-          <li>تطبيق أخف وأسرع عند الفتح وأثناء الكتابة.</li>
-        </ul>
-      </article>
-      <article class="ver">
-        <header><b class="v">5.1.0</b><span class="tag old">سابق</span></header>
-        <ul>
-          <li>تحديثات من داخل التطبيق، يُتحقَّق من بصمتها الرقمية قبل التثبيت.</li>
-          <li>حماية أقوى لقاعدة البيانات والملفات، وتحديث مكتبات أندرويد الأمنية.</li>
-          <li>الصور تُضغط قبل الرفع: صورة 6 ميغابايت تصبح نحو 250 كيلوبايت.</li>
-          <li>فلاتر وأغانٍ للمنشورات، وتحميل أسرع للصفحة الرئيسية.</li>
-        </ul>
-      </article>
-      <article class="ver">
-        <header><b class="v">5.0.0</b><span class="tag old">سابق</span></header>
-        <ul>
-          <li>قصص كاملة: كتابة وخلفيات، 25 فلتراً، أغانٍ، رسم، واستطلاعات واختبارات وأسئلة.</li>
-          <li>الأصدقاء المقربون، والقصص المميزة على الملف الشخصي.</li>
-          <li>مركز الخصوصية: حساب خاص، كلمات مخفية، تقييد وكتم وحظر.</li>
-          <li>تغيير خلفية التطبيق، والوضع الخفيف للهواتف القديمة، وحدّ يومي للاستخدام.</li>
-        </ul>
-      </article>
-      <article class="ver">
-        <header><b class="v">4.0.0</b><span class="tag old">سابق</span></header>
-        <ul>
-          <li>دردشة بدون إنترنت عبر شبكة بلوتوث تقفز من هاتف لهاتف.</li>
-          <li>رسائل خاصة مشفّرة من طرف لطرف.</li>
-          <li>تصميم Liquid Glass الزجاجي على الهاتف والكمبيوتر.</li>
+          <li>تصميم جديد للمحادثة، مع فقاعات أوضح وتفاعلات وردّ بالسحب.</li>
+          <li>رسائل صوتية: اضغط مطولاً للتسجيل، وموجة صوتية حقيقية.</li>
+          <li>مكالمات ثابتة: نغمة رنين، كاميرا أثناء المكالمة، ومشاركة الشاشة.</li>
+          <li>رسائل مؤقتة تختفي بعد ساعة أو يوم أو أسبوع.</li>
         </ul>
       </article>
     </div>
+    <a class="more" href="/updates">كل الإصدارات وما تغيّر فيها<svg class="ic" aria-hidden="true"><use href="/icons.svg#arrow"/></svg></a>
   </section>
 
-  <section id="features">
-    <h2>لماذا ChatHup؟</h2>
-    <p class="sub">كل ما تحبه في تطبيقات التواصل، مع ميزات لا تجدها في غيره.</p>
-    <div class="feats">
-      <div class="feat"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7l10 10-5 5V2l5 5L7 17"/></svg></span><b>بدون إنترنت</b><small>رسائل عبر البلوتوث حتى في الجبل أو أثناء انقطاع الشبكة.</small></div>
-      <div class="feat"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></span><b>قصص بالفلاتر والأغاني</b><small>25 فلتراً، ملصقات تفاعلية، واستطلاعات يرد عليها أصدقاؤك.</small></div>
-      <div class="feat"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></span><b>خصوصيتك أولاً</b><small>حساب خاص، من يراسلك ومن يشير إليك، وكلمات مخفية.</small></div>
-      <div class="feat"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><b>خفيف وسريع</b><small>صور مضغوطة، تحميل عند الحاجة، ووضع خفيف للهواتف القديمة.</small></div>
-    </div>
-  </section>
-
-  <section id="reviews">
-    <h2>آراء المستخدمين</h2>
-    <p class="sub">جرّبت ChatHup؟ قيّمه واكتب رأيك ليراه الجميع.</p>
-    <div class="reviews">
-      <aside class="score">
-        <span class="num" id="avg">—</span>
-        <span class="stars" id="avg-stars"><span class="off">★★★★★</span></span>
-        <small id="count">لا توجد تقييمات بعد</small>
-      </aside>
-      <div>
-        <form class="form" id="form">
-          <div class="row"><b id="form-title">قيّم التطبيق</b><div class="pick" id="pick" role="radiogroup" aria-label="التقييم"></div></div>
-          <label for="name" class="note">اسمك</label>
-          <input id="name" maxlength="40" autocomplete="nickname" placeholder="مثال: أحمد">
-          <input id="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <label for="text" class="note">رأيك (اختياري)</label>
-          <textarea id="text" maxlength="500" placeholder="ما الذي أعجبك؟ وما الذي تريد تحسينه؟"></textarea>
-          <div class="row"><p class="note" id="status"></p><button class="btn send" id="send" type="submit" disabled>نشر رأيي</button></div>
-        </form>
-        <p class="note" id="thanks" hidden>شكراً لك! تم نشر رأيك.</p>
-                <div class="list" id="list"><div class="empty">لا توجد آراء بعد. كن أول من يقيّم ChatHup.</div></div>
+  <section class="shell sec" id="download">
+    <h2>حمّل ChatHup</h2>
+    <p class="intro">مجاني على أندرويد وويندوز، أو سجّل الدخول من المتصفح على أي جهاز.</p>
+    <div class="dl">
+      <div class="dl-main">
+        <h3>أندرويد</h3>
+        <p>الإصدار 5.2.1 · ملف APK · <span class="ltr">6.2 MB</span> · أندرويد 7 فما فوق</p>
+        <a class="btn" href="/ChatHup-android.apk" download><svg class="ic" aria-hidden="true"><use href="/icons.svg#download"/></svg>تحميل APK</a>
+        <ol>
+          <li>اضغط «تحميل APK» وافتح الملف بعد انتهاء التنزيل.</li>
+          <li>إن طُلب منك، اسمح بـ «التثبيت من هذا المصدر» ثم اضغط «تثبيت».</li>
+          <li>التحديثات التالية تصل من داخل التطبيق.</li>
+        </ol>
+      </div>
+      <div class="dl-side">
+        <div class="dl-alt">
+          <h3>ويندوز</h3>
+          <p>مثبّت EXE · <span class="ltr">99 MB</span> · ويندوز 10 و11 (64 بت). إن ظهرت رسالة «Windows protected your PC» اضغط More info ثم Run anyway.</p>
+          <a class="btn btn-line" href="/windows"><svg class="ic" aria-hidden="true"><use href="/icons.svg#windows"/></svg>تحميل لويندوز</a>
+        </div>
+        <div class="dl-alt">
+          <h3>بدون تثبيت</h3>
+          <p>سجّل الدخول من المتصفح على الكمبيوتر أو الهاتف، ويمكنك إضافته إلى الشاشة الرئيسية.</p>
+          <a class="btn btn-line" href="/app"><svg class="ic" aria-hidden="true"><use href="/icons.svg#login"/></svg>تسجيل الدخول</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer>© ChatHup · تواصل اجتماعي يعمل حتى بدون إنترنت</footer>
-</div>
-</div>
+  <section class="shell sec" id="privacy">
+    <h2>خصوصيتك جزء من التطبيق</h2>
+    <p class="intro">ما نجمعه، ولماذا، وكيف تتحكم فيه، مكتوب بوضوح في <a href="/privacy">سياسة الخصوصية</a>.</p>
+    <div class="promise">
+      <div><h3><svg class="ic" aria-hidden="true"><use href="/icons.svg#lock"/></svg>رسائل خاصة مشفّرة</h3><p>الرسائل الخاصة مشفّرة من طرف لطرف، وكذلك الرسائل التي تمر عبر البلوتوث.</p></div>
+      <div><h3><svg class="ic" aria-hidden="true"><use href="/icons.svg#eye-off"/></svg>بدون إعلانات ولا تتبّع</h3><p>لا نعرض إعلانات، ولا توجد أدوات تتبّع إعلانية في الموقع أو التطبيق.</p></div>
+      <div><h3><svg class="ic" aria-hidden="true"><use href="/icons.svg#users"/></svg>أنت تختار من يراك</h3><p>حساب خاص، تحديد من يراسلك ومن يشير إليك، كلمات مخفية، وتقييد وكتم وحظر.</p></div>
+      <div><h3><svg class="ic" aria-hidden="true"><use href="/icons.svg#shield"/></svg>تحديثات موثّقة</h3><p>يتحقق التطبيق من البصمة الرقمية لكل تحديث قبل تثبيته.</p></div>
+    </div>
+  </section>
+
+  <section class="closer">
+    <div class="shell">
+      <h2>ابقَ على تواصل، مع إنترنت أو بدونه.</h2>
+      <div class="cta">
+        <a class="btn btn-blue" href="/ChatHup-android.apk" download><svg class="ic" aria-hidden="true"><use href="/icons.svg#download"/></svg>تحميل لأندرويد</a>
+        <a class="btn btn-line" href="/app"><svg class="ic" aria-hidden="true"><use href="/icons.svg#login"/></svg>تسجيل الدخول</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <div>
+      <a class="brand" href="/"><img src="/icon.png" alt="" width="34" height="34">ChatHup</a>
+      <p>تواصل اجتماعي ومحادثات ومكالمات، يعمل حتى بدون إنترنت عبر البلوتوث.</p>
+    </div>
+    <div><h4>التطبيق</h4><ul><li><a href="/chat">المحادثة</a></li><li><a href="/updates">التحديثات</a></li><li><a href="/#download">التحميل</a></li><li><a href="/app">تسجيل الدخول</a></li></ul></div>
+    <div><h4>الدعم</h4><ul><li><a href="/help">الأسئلة الشائعة</a></li><li><a href="/help#contact">تواصل معنا</a></li><li><a href="/help#report">الإبلاغ عن إساءة</a></li><li><a href="/help#delete">حذف الحساب</a></li></ul></div>
+    <div><h4>قانوني</h4><ul><li><a href="/privacy">سياسة الخصوصية</a></li><li><a href="/terms">شروط الاستخدام</a></li><li><a href="/privacy#security">الأمان</a></li></ul></div>
+    <div class="legal"><span>© 2026 ChatHup</span><span>الإصدار 5.2.1</span></div>
+  </div>
+</footer>
 
 </body>
 </html>

@@ -1,0 +1,5 @@
+Contact: mailto:riad.dz.mahroug@gmail.com?subject=Report%20from%20ChatHup%20app
+Expires: 2027-10-24T00:00:00.000Z
+Preferred-Languages: ar, en, fr
+Canonical: https://chatapp31.vercel.app/.well-known/security.txt
+Policy: https://chatapp31.vercel.app/privacy#security

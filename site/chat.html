@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>المحادثة — ChatHup</title>
+<meta name="description" content="جرّب محادثة ChatHup: رسائل صوتية، تفاعلات، ردّ على الرسائل، رسائل مؤقتة، مكالمات، وإرسال عبر البلوتوث عندما ينقطع الإنترنت.">
+<meta name="theme-color" content="#eff1f5">
+<link rel="canonical" href="https://chatapp31.vercel.app/chat">
+<meta property="og:title" content="محادثة ChatHup">
+<meta property="og:description" content="جرّب المحادثة، واقطع الإنترنت لترى رسالتك تمرّ عبر البلوتوث.">
+<meta property="og:image" content="https://chatapp31.vercel.app/icon-512.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/style.css">
+<script src="/site.js" defer></script>
+</head>
+<body>
+
+<a class="vh" href="#main">تخطَّ إلى المحتوى</a>
+<header class="top" id="top">
+  <div class="shell">
+    <a class="brand" href="/"><img src="/icon.png" alt="" width="34" height="34">ChatHup</a>
+    <nav class="links" aria-label="أقسام الموقع">
+      <a href="/chat">المحادثة</a>
+      <a href="/updates">التحديثات</a>
+      <a href="/#download">التحميل</a>
+      <a href="/privacy">الخصوصية</a>
+      <a href="/help">المساعدة</a>
+    </nav>
+    <div class="top-end">
+      <a class="login" href="/app"><svg class="ic" aria-hidden="true"><use href="/icons.svg#login"/></svg>تسجيل الدخول</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="فتح القائمة"><svg class="ic" aria-hidden="true"><use href="/icons.svg#menu"/></svg></button>
+    </div>
+  </div>
+  <nav class="drawer" id="drawer" aria-label="القائمة" hidden>
+    <a href="/chat">المحادثة</a><a href="/updates">التحديثات</a><a href="/#download">التحميل</a><a href="/privacy">الخصوصية</a><a href="/help">المساعدة</a>
+  </nav>
+</header>
+
+<main id="main" class="shell chat-page">
+  <div class="chat-page-head">
+    <div>
+      <h1>جرّب المحادثة</h1>
+      <p>اكتب، سجّل رسالة صوتية، اضغط على أي رسالة لتتفاعل أو تردّ، واتصل. ثم اقطع الإنترنت لترى رسالتك تمرّ عبر البلوتوث. هذه نسخة تجريبية: لا يُرسَل شيء خارج هذه الصفحة.</p>
+    </div>
+    <a class="btn btn-blue" href="/app"><svg class="ic" aria-hidden="true"><use href="/icons.svg#login"/></svg>تسجيل الدخول للمحادثة الحقيقية</a>
+  </div>
+
+  <div class="app" data-demo="full">
+    <aside class="inbox" aria-label="المحادثات">
+      <div class="inbox-head"><b>الرسائل</b></div>
+      <div class="search" aria-hidden="true"><svg class="ic"><use href="/icons.svg#search"/></svg>ابحث في المحادثات</div>
+      <ul class="convos">
+        <li><button class="convo" type="button" data-id="sara" aria-current="true"><span class="avatar av-s" aria-hidden="true">س</span><span class="meta"><b>سارة <time>21:00</time></b><span>اضغط «اقطع الإنترنت» لفوق…</span></span></button></li>
+        <li><button class="convo" type="button" data-id="group"><span class="avatar av-m" aria-hidden="true">ح</span><span class="meta"><b>الحومة <time>18:27</time></b><span>ياسين: رسالة صوتية</span></span><span class="unread">3</span></button></li>
+        <li><button class="convo" type="button" data-id="yassine"><span class="avatar av-y" aria-hidden="true">ي</span><span class="meta"><b>ياسين <time>17:05</time></b><span>ههه، اضغط على السرعة وشوف</span></span></button></li>
+        <li><button class="convo" type="button" data-id="amine"><span class="avatar av-a" aria-hidden="true">أ</span><span class="meta"><b>أمين <time>15:41</time></b><span>عيّطتلك وما رديتش</span></span><span class="unread">1</span></button></li>
+      </ul>
+    </aside>
+
+    <section class="room" aria-label="المحادثة">
+      <div class="thread-head">
+        <span class="avatar av-s" data-peer-av aria-hidden="true">س</span>
+        <div><b data-peer-name>سارة</b><span class="presence" data-presence>متصلة الآن</span></div>
+        <div class="thread-tools">
+          <button class="net dark" type="button" role="switch" aria-checked="false" data-net><span data-net-label>اقطع الإنترنت</span><span class="knob" aria-hidden="true"></span></button>
+          <button class="tool" type="button" data-timer aria-haspopup="true" aria-expanded="false" aria-pressed="false" aria-label="الرسائل المؤقتة"><svg class="ic" aria-hidden="true"><use href="/icons.svg#timer"/></svg></button>
+          <button class="tool" type="button" data-voice-call aria-label="مكالمة صوتية"><svg class="ic" aria-hidden="true"><use href="/icons.svg#phone"/></svg></button>
+          <button class="tool" type="button" data-video-call aria-label="مكالمة فيديو"><svg class="ic" aria-hidden="true"><use href="/icons.svg#video"/></svg></button>
+        </div>
+      </div>
+
+      <div class="timer-menu" data-timer-menu role="menu" hidden>
+        <b>تختفي الرسائل بعد</b>
+        <button type="button" role="menuitemradio" aria-checked="true" data-t="off">إيقاف</button>
+        <button type="button" role="menuitemradio" aria-checked="false" data-t="ساعة">ساعة</button>
+        <button type="button" role="menuitemradio" aria-checked="false" data-t="يوم">يوم</button>
+        <button type="button" role="menuitemradio" aria-checked="false" data-t="أسبوع">أسبوع</button>
+      </div>
+
+      <div class="mesh-banner" data-mesh-banner hidden>
+        <svg class="ic" aria-hidden="true"><use href="/icons.svg#wifi-off"/></svg>
+        <span>لا يوجد إنترنت · الرسائل تمرّ عبر الهواتف القريبة</span>
+        <div class="relay" aria-hidden="true">
+          <span class="node lit"><span class="dev"></span>أنت</span>
+          <span class="hop"><i class="pkt"></i></span>
+          <span class="node"><span class="dev"></span>هاتف</span>
+          <span class="hop"><i class="pkt"></i></span>
+          <span class="node"><span class="dev"></span>هاتف</span>
+          <span class="hop"><i class="pkt"></i></span>
+          <span class="node" data-relay-peer><span class="dev"></span>سارة</span>
+        </div>
+      </div>
+
+      <div class="msgs" data-msgs aria-live="polite"></div>
+
+      <div class="react-bar" data-react-bar role="toolbar" aria-label="تفاعل مع الرسالة" hidden>
+        <button type="button" data-r="❤️" aria-label="قلب">❤️</button>
+        <button type="button" data-r="😂" aria-label="ضحك">😂</button>
+        <button type="button" data-r="👍" aria-label="إعجاب">👍</button>
+        <button type="button" data-r="😮" aria-label="تعجّب">😮</button>
+        <button type="button" data-r="😢" aria-label="حزن">😢</button>
+        <button type="button" class="reply-btn">ردّ</button>
+      </div>
+
+      <div class="replying" data-replying hidden>
+        <svg class="ic" aria-hidden="true"><use href="/icons.svg#reply"/></svg><span></span>
+        <button type="button" aria-label="إلغاء الرد"><svg class="ic" aria-hidden="true"><use href="/icons.svg#x"/></svg></button>
+      </div>
+
+      <form class="compose" data-compose>
+        <button class="tool" type="button" data-mic aria-label="أرسل رسالة صوتية"><svg class="ic" aria-hidden="true"><use href="/icons.svg#mic"/></svg></button>
+        <label class="vh" for="chat-input">اكتب رسالة</label>
+        <input id="chat-input" autocomplete="off" maxlength="300" placeholder="اكتب رسالة…">
+        <button class="send" type="submit" aria-label="إرسال" disabled><svg class="ic" aria-hidden="true"><use href="/icons.svg#send"/></svg></button>
+      </form>
+
+      <div class="call" data-call role="dialog" aria-modal="true" aria-label="مكالمة" hidden>
+        <div>
+          <span class="avatar av-s" aria-hidden="true">س</span>
+          <h3 data-call-name>سارة</h3>
+          <p data-clock>يرنّ…</p>
+          <div class="row">
+            <button type="button" data-mute aria-pressed="false" aria-label="كتم الصوت"><svg class="ic" aria-hidden="true"><use href="/icons.svg#mic-off"/></svg></button>
+            <button type="button" data-cam aria-pressed="false" aria-label="الكاميرا"><svg class="ic" aria-hidden="true"><use href="/icons.svg#video"/></svg></button>
+            <button type="button" data-share aria-pressed="false" aria-label="مشاركة الشاشة"><svg class="ic" aria-hidden="true"><use href="/icons.svg#screen"/></svg></button>
+            <button type="button" class="end" aria-label="إنهاء المكالمة"><svg class="ic" aria-hidden="true"><use href="/icons.svg#phone"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="tour">
+    <div><b>اضغط على أي رسالة</b><p>اختر تفاعلاً، أو «ردّ» لتقتبسها في رسالتك.</p></div>
+    <div><b>الرسائل الصوتية</b><p>شغّلها وغيّر السرعة إلى 1.5× أو 2×، أو أرسل واحدة من زر الميكروفون.</p></div>
+    <div><b>الرسائل المؤقتة</b><p>من زر المؤقت: تختفي الرسائل بعد ساعة أو يوم أو أسبوع.</p></div>
+    <div><b>بدون إنترنت</b><p>اضغط «اقطع الإنترنت» وأرسل رسالة: سترى طريقها عبر الهواتف القريبة.</p></div>
+  </div>
+</main>
+
+<footer class="foot" style="margin-top:96px">
+  <div class="shell">
+    <div>
+      <a class="brand" href="/"><img src="/icon.png" alt="" width="34" height="34">ChatHup</a>
+      <p>تواصل اجتماعي ومحادثات ومكالمات، يعمل حتى بدون إنترنت عبر البلوتوث.</p>
+    </div>
+    <div><h4>التطبيق</h4><ul><li><a href="/chat">المحادثة</a></li><li><a href="/updates">التحديثات</a></li><li><a href="/#download">التحميل</a></li><li><a href="/app">تسجيل الدخول</a></li></ul></div>
+    <div><h4>الدعم</h4><ul><li><a href="/help">الأسئلة الشائعة</a></li><li><a href="/help#contact">تواصل معنا</a></li><li><a href="/help#report">الإبلاغ عن إساءة</a></li><li><a href="/help#delete">حذف الحساب</a></li></ul></div>
+    <div><h4>قانوني</h4><ul><li><a href="/privacy">سياسة الخصوصية</a></li><li><a href="/terms">شروط الاستخدام</a></li><li><a href="/privacy#security">الأمان</a></li></ul></div>
+    <div class="legal"><span>© 2026 ChatHup</span><span>الإصدار 5.2.1</span></div>
+  </div>
+</footer>
+
+</body>
+</html>
